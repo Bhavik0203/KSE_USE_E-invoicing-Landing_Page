@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, FileText, Shield, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send } from 'lucide-react';
+import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale } from 'lucide-react';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
+import banner2 from '../../public/1.png';
 export default function MacRossKSALanding() {
   const [activeService, setActiveService] = useState(0);
   const [scrolled, setScrolled] = useState(false);
@@ -126,7 +127,7 @@ export default function MacRossKSALanding() {
     {
       title: "Company Formation",
       description: "Complete setup including MISA, CR, and RHQ registration",
-      icon: Building,
+      icon: Briefcase,
       features: ["MISA Registration", "Commercial Registration", "RHQ Setup", "National Address"]
     },
     {
@@ -138,13 +139,13 @@ export default function MacRossKSALanding() {
     {
       title: "Tax Compliance",
       description: "Comprehensive tax services and coordination",
-      icon: Shield,
+      icon: ShieldCheck,
       features: ["Withholding Tax", "Zakat & Income Tax", "ZATCA Coordination", "Annual Returns"]
     },
     {
       title: "Transfer Pricing",
       description: "Complete TP documentation and compliance",
-      icon: Globe,
+      icon: Scale,
       features: ["Master File Preparation", "Local File Documentation", "CbC Reporting", "Disclosure Forms"]
     }
   ];
@@ -180,6 +181,7 @@ export default function MacRossKSALanding() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    if (name === 'number') return; // handled inline above
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -204,7 +206,7 @@ export default function MacRossKSALanding() {
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/30 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-black/50 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'
       }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center space-x-2">
@@ -213,7 +215,7 @@ export default function MacRossKSALanding() {
             </div>
             <div>
               <span className="text-xl font-bold text-red-600 block leading-none">Mac & Ross</span>
-              <span className="text-xs text-gray-600">Management Consultancy</span>
+              <span className="text-xs text-white">Management Consultancy</span>
             </div>
           </div>
           <div className="hidden md:flex space-x-8">
@@ -277,7 +279,9 @@ export default function MacRossKSALanding() {
       </section>
 
       {/* KSA Overview */}
+      <section id="about">
     <DeliveryMethodsSection/>
+    </section>
             <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
         <div className="container max-w-6xl mx-auto">
          <div className="md:w-full text-center mb-12">
@@ -333,7 +337,9 @@ export default function MacRossKSALanding() {
           </div> */}
         </div>
       </section>
-           <div className="flex justify-end  items-center min-h-120 bg-gray-900 p-4 ">
+
+      {/* all view */}
+      <div className="hidden md:flex justify-end  items-center min-h-120 bg-gray-900 p-4 ">
           <div className='max-w-6xl mx-auto flex flex-col md:flex-row  gap-8'>
               <div className="">
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
@@ -354,10 +360,16 @@ export default function MacRossKSALanding() {
             style={{ minWidth: '56px' }}
           >
             <div className="flex flex-col items-center w-full">
-              <span className="min-w-56 p-2 text-center transform -rotate-90 transition-all duration-500 uppercase text-red-600 tracking-wider text-sm group-hover:rotate-0 group-hover:transform-none group-hover:mb-2">
+              <span
+                className="min-w-56 p-2 text-center transition-all duration-500 uppercase text-gray-900 tracking-wider text-sm transform group-hover:rotate-0 group-hover:mb-2 -rotate-90 mb-0"
+                style={{ transitionProperty: 'transform, margin-bottom' }}
+              >
                 {project}
               </span>
-              <span className="hidden group-hover:block min-w-56 p-2 text-center transition-all duration-500 text-red-400 tracking-wider text-xs">
+              <span
+                className="min-w-56 p-2 text-center transition-all duration-500 text-gray-800 tracking-wider text-xs opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 overflow-hidden"
+                style={{ transitionProperty: 'opacity, max-height' }}
+              >
                 {projects1[index]}
               </span>
             </div>
@@ -366,7 +378,48 @@ export default function MacRossKSALanding() {
       </div>
           </div>
     </div>
-      {/* Business Setup Process */}
+     {/* mobile view */}
+     <div className="flex md:hidden justify-end items-center min-h-120 bg-gray-900 p-4 ">
+  <div className='max-w-6xl mx-auto flex flex-col md:flex-row gap-8 w-full'>
+    <div className="">
+      <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+        GIGA & MEGA PROJECTS
+      </p>
+      <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
+        Driving<br />
+        Saudi Arabia’s<br />
+        <span className="text-red-600">growth</span> and innovation.
+      </h2>
+    </div>
+
+    {/* Force vertical layout on mobile */}
+    <div className="w-full flex flex-col md:w-220 md:flex-row h-auto md:h-100 rounded bg-gray-800 gap-2 md:gap-1 p-2">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="flex flex-col md:flex-1 overflow-hidden cursor-pointer rounded-sm transition-all duration-500 bg-white border-2 border-red-600 hover:md:flex-[4] group"
+        >
+          <div className="flex flex-col md:flex-col items-center w-full justify-center h-full">
+            <span
+              className="p-2 text-center transition-all duration-500 uppercase text-gray-900 tracking-wider text-sm md:transform md:group-hover:rotate-0 md:group-hover:mb-2 md:-rotate-90 md:mb-0"
+              style={{ transitionProperty: 'transform, margin-bottom' }}
+            >
+              {project}
+            </span>
+
+            <span
+              className="p-2 text-center transition-all duration-500 text-gray-800 tracking-wider text-xs block md:opacity-0 md:max-h-0 md:group-hover:opacity-100 md:group-hover:max-h-40 md:overflow-hidden"
+              style={{ transitionProperty: 'opacity, max-height' }}
+            >
+              {projects1[index]}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
       
 
       {/* Key Compliances */}
@@ -485,16 +538,30 @@ export default function MacRossKSALanding() {
           </div> */}
         </div>
       </section>
-
+        {/* <div className="md:w-full text-center mb-6">
+  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+  Services
+  </p>
+  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
+  Mac & Ross 
+    <span className="text-red-600"> Services </span>in KSA
+  </h2>
+</div> */}
       {/* Services */}
-      <section id="services" className="py-16 px-6 bg-slate-50">
+      <section id="services" className="py-16 px-6 bg-gray-900">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Mac & Ross Services in KSA</h2>
-            <div className="w-24 h-1 bg-red-600 mx-auto"></div>
-          </div>
+          
+          <div className="md:w-full text-center mb-6">
+  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+  Services
+  </p>
+  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
+  Mac & Ross 
+    <span className="text-red-600"> Services </span>in KSA
+  </h2>
+</div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <div 
                 key={index}
@@ -527,7 +594,7 @@ export default function MacRossKSALanding() {
       {/* Contact Section */}
    <section id="contact"
   className="relative py-16 px-6 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen  animate-fade-in-up"
-  style={{ backgroundImage: `url('${banner1.src}')` }}
+  style={{ backgroundImage: "url('/1.png')" }}
 >
       <style jsx global>{`
         @keyframes fadeInUp {
@@ -587,13 +654,7 @@ export default function MacRossKSALanding() {
                   <p className="opacity-90">Riyadh, Kingdom of Saudi Arabia</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4 group">
-                <ExternalLink className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Website</h4>
-                  <p className="opacity-90">www.macnross.com</p>
-                </div>
-              </div>
+             
             </div>
           
             <div className="pt-6">
@@ -640,9 +701,17 @@ export default function MacRossKSALanding() {
                   id="number"
                   name="number"
                   value={formData.number}
-                  onChange={handleInputChange}
+                  onChange={e => {
+                    // Only allow digits and max 10 characters
+                    const value = e.target.value.replace(/[^\d]/g, '').slice(0, 10);
+                    setFormData(prev => ({ ...prev, number: value }));
+                  }}
                   className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
-                  placeholder="+966 XX XXX XXXX"
+                  placeholder="Enter your phone number"
+                  inputMode="numeric"
+                  pattern="\\d{10}"
+                  maxLength={10}
+                  minLength={10}
                 />
               </div>
               <div>

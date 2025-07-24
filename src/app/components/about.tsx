@@ -48,7 +48,7 @@ const SaudiAdvantagesSection = () => {
 </div>
 
 
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Business-Friendly Reforms */}
           <div className="flex items-start space-x-6 group cursor-pointer bg-white  backdrop-blur-[28px] p-6 rounded-lg shadow-lg hover:-translate-y-2 duration-300 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-red-400 hover:bg-red-50 group">
             <div className="flex-shrink-0">
