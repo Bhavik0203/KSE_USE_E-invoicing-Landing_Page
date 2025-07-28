@@ -236,9 +236,9 @@ export default function MacRossKSALanding() {
         <div className="container max-w-6xl mx-auto pt-30 ">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-1/2 mb-12 lg:mb-0">
+            <div className="lg:w-2/3 mb-12 lg:mb-0">
               <div className="animate-fade-in-up">
-                <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 ">
                   Expand with 
                   <span className="text-red-600 block">Confidence</span>
                   <span className="text-2xl text-white font-normal">KSA Company Formation & Regulatory Insights</span>
@@ -257,7 +257,7 @@ export default function MacRossKSALanding() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 flex justify-center">
+            {/* <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
                 <div className="w-80 h-80 bg-red-100 rounded-full animate-pulse-slow"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -273,7 +273,7 @@ export default function MacRossKSALanding() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -752,35 +752,62 @@ export default function MacRossKSALanding() {
               <p className="text-gray-400">Leading the digital transformation in Middle East invoicing.</p>
             </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <div className="space-y-2">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">UAE Guidelines</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Tax Calculator</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Accounting Services</a>
-              </div>
-            </div>
+            <ul className="font-semibold mb-8 leading-10">
+              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">About KSA</a></li>
+              <li><a href="#setup" className="text-white hover:text-red-600 transition-colors">Business Setup</a></li>
+              <li><a href="#compliance" className="text-white hover:text-red-600 transition-colors">Compliance</a></li>
+              <li><a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a></li>
+              <li><a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a></li>
+            </ul>
             
-            <div>
+            {/* <div>
               <h4 className="font-semibold mb-4">Countries</h4>
               <div className="space-y-2">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">UAE</a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Saudi Arabia</a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Egypt</a>
               </div>
-            </div>
+            </div> */}
             
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-gray-400">
-                <p>support@einvoiceme.com</p>
-                <p>+971 4 XXX XXXX</p>
+                <div className="flex items-start space-x-4 group">
+                  <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Phone</h4>
+                    <p className="opacity-90 mb-1">+966-55 363 7617</p>
+                    <p className="opacity-90">+966-50 225 4045</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 group">
+                  <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Email</h4>
+                    <p className="opacity-90 mb-1">info@mnrksa.com</p>
+                    <p className="opacity-90">compliance@mnrksa.com</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Address</h4>
+              <div className="space-y-2 text-gray-400">
+                
+                <div className="flex items-start space-x-4 group">
+                  <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Location</h4>
+                    <p className="opacity-90">Riyadh, Kingdom of Saudi Arabia</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 eInvoice ME. All rights reserved.</p>
+            <p>&copy; 2025 eInvoice ME. All rights reserved | Crafted with care by Digitalize The Globe.</p>
           </div>
         </div>
       </footer>
