@@ -510,8 +510,9 @@ export default function MacRossKSALanding() {
                         <span className={`px-2 py-1 rounded text-${item.color}-700 bg-${item.color}-100`}>
                           {item.frequency}
                         </span>
-                        <span className="text-gray-600">{item.dueDate}</span>
+                        
                       </div>
+                      <span className="text-gray-600">{item.dueDate}</span>
                     </div>
                   </div>
                 </div>
