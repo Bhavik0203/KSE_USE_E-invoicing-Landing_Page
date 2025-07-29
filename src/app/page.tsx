@@ -9,6 +9,7 @@ export default function MacRossKSALanding() {
   const [activeService, setActiveService] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [activeCompliance, setActiveCompliance] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
    const projects1 = [
   "NEOM is a $500 billion smart city initiative aiming to redefine urban living. It will feature cutting-edge technologies, clean energy, and AI integration, making it a global model of sustainable development.",
   "The Red Sea Project is a luxury regenerative tourism destination with untouched islands and marine ecosystems. It offers sustainable resorts and immersive travel experiences along Saudi’s pristine coastline.",
@@ -35,6 +36,17 @@ export default function MacRossKSALanding() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [mobileMenuOpen]);
 
   const megaProjects = [
     "NEOM - Future City Development",
@@ -175,13 +187,14 @@ export default function MacRossKSALanding() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: '+971', // default value
     number: '',
     message: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (name === 'number') return; // handled inline above
+    if (name === 'number') return; // handled inline below
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -199,7 +212,8 @@ export default function MacRossKSALanding() {
       alert('Phone number must be exactly 10 digits and contain only numbers.');
       return;
     }
-    console.log('Form submitted:', formData);
+    const fullPhoneNumber = formData.countryCode + formData.number;
+    console.log('Form submitted:', { ...formData, fullPhoneNumber });
     // You can add validation and API calls here
   };
   return (
@@ -218,6 +232,7 @@ export default function MacRossKSALanding() {
               <span className="text-xs text-white">Management Consultancy</span>
             </div>
           </div>
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-white hover:text-red-600 transition-colors">About KSA</a>
             <a href="#setup" className="text-white hover:text-red-600 transition-colors">Business Setup</a>
@@ -225,7 +240,36 @@ export default function MacRossKSALanding() {
             <a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a>
             <a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a>
           </div>
+          {/* Hamburger for Mobile */}
+          <button
+            className="md:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-red-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Open menu"
+          >
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed top-0 left-0 w-screen h-screen z-50 bg-black flex flex-col items-center justify-center space-y-8 transition-all duration-300 animate-fade-in-up">
+            <button
+              className="absolute top-6 right-6 p-2 rounded focus:outline-none focus:ring-2 focus:ring-red-600"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <a href="#about" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>About KSA</a>
+            <a href="#setup" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Business Setup</a>
+            <a href="#compliance" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Compliance</a>
+            <a href="#services" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
+            <a href="#contact" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -387,32 +431,42 @@ export default function MacRossKSALanding() {
       </p>
       <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
         Driving<br />
-        Saudi Arabia’s<br />
+        Saudi Arabia's<br />
         <span className="text-red-600">growth</span> and innovation.
       </h2>
     </div>
 
-    {/* Force vertical layout on mobile */}
-    <div className="w-full flex flex-col md:w-220 md:flex-row h-auto md:h-100 rounded bg-gray-800 gap-2 md:gap-1 p-2">
+    {/* Accordion layout for mobile */}
+    <div className="w-full space-y-2">
       {projects.map((project, index) => (
         <div
           key={index}
-          className="flex flex-col md:flex-1 overflow-hidden cursor-pointer rounded-sm transition-all duration-500 bg-white border-2 border-red-600 hover:md:flex-[4] group"
+          className="bg-white rounded-lg border-2 border-red-600 overflow-hidden"
         >
-          <div className="flex flex-col md:flex-col items-center w-full justify-center h-full">
-            <span
-              className="p-2 text-center transition-all duration-500 uppercase text-gray-900 tracking-wider text-sm md:transform md:group-hover:rotate-0 md:group-hover:mb-2 md:-rotate-90 md:mb-0"
-              style={{ transitionProperty: 'transform, margin-bottom' }}
-            >
+          <button
+            onClick={() => setActiveService(index === activeService ? -1 : index)}
+            className="w-full p-4 text-left flex items-center justify-between hover:bg-red-50 transition-colors duration-200"
+          >
+            <span className="uppercase text-gray-900 tracking-wider text-sm font-semibold">
               {project}
             </span>
-
-            <span
-              className="p-2 text-center transition-all duration-500 text-gray-800 tracking-wider text-xs block md:opacity-0 md:max-h-0 md:group-hover:opacity-100 md:group-hover:max-h-40 md:overflow-hidden"
-              style={{ transitionProperty: 'opacity, max-height' }}
-            >
-              {projects1[index]}
-            </span>
+            <ChevronRight 
+              className={`w-5 h-5 text-red-600 transition-transform duration-300 ${
+                activeService === index ? 'rotate-90' : ''
+              }`}
+            />
+          </button>
+          
+          <div 
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              activeService === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="p-4 pt-0 border-t border-red-200 bg-red-50">
+              <p className="text-gray-800 text-sm leading-relaxed">
+                {projects1[index]}
+              </p>
+            </div>
           </div>
         </div>
       ))}
@@ -484,7 +538,7 @@ export default function MacRossKSALanding() {
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 rounded-lg text-2xl">
+                <div className="bg-gray-50 p-6 rounded-lg text-2xl hidden md:block">
                   <h4 className="font-semibold text-gray-900 mb-3">Details</h4>
                   <p className="text-gray-700 leading-relaxed">{complianceItems[activeCompliance].description}</p>
                 </div>
@@ -680,7 +734,7 @@ export default function MacRossKSALanding() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
                   placeholder="Your full name"
                 />
               </div>
@@ -691,22 +745,38 @@ export default function MacRossKSALanding() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
                   placeholder="your.email@example.com"
                 />
               </div>
-              <div>
+              <div className="flex space-x-2">
+                {/* Country Code Dropdown */}
+                <select
+                  id="countryCode"
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={e => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
+                  className="px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
+                >
+                  <option value="+971">+971</option>
+                  <option value="+91">+91</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                  <option value="+61">+61</option>
+                  {/* Add more if needed */}
+                </select>
+
+                {/* Phone Number Input */}
                 <input
                   type="tel"
                   id="number"
                   name="number"
                   value={formData.number}
                   onChange={e => {
-                    // Only allow digits and max 10 characters
                     const value = e.target.value.replace(/[^\d]/g, '').slice(0, 10);
                     setFormData(prev => ({ ...prev, number: value }));
                   }}
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg"
                   placeholder="Enter your phone number"
                   inputMode="numeric"
                   pattern="\\d{10}"
@@ -714,6 +784,7 @@ export default function MacRossKSALanding() {
                   minLength={10}
                 />
               </div>
+
               <div>
                 <textarea
                   id="message"
@@ -721,7 +792,7 @@ export default function MacRossKSALanding() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={2}
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent resize-none transition-all duration-200 focus:shadow-lg"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent resize-none transition-all duration-200 focus:shadow-lg"
                   placeholder="Tell us about your business expansion plans..."
                 />
               </div>
