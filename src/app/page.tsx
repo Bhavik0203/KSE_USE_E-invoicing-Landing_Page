@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale } from 'lucide-react';
+import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search } from 'lucide-react';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
 import banner2 from '../../public/1.png';
@@ -137,28 +137,40 @@ export default function MacRossKSALanding() {
 
   const services = [
     {
-      title: "Company Formation",
-      description: "Complete setup including MISA, CR, and RHQ registration",
+      title: "Assistance in Company Formation (MISA /CR / RHQ)",
+      description: "Efficient setup with the right structure to align with your commercial goals.",
       icon: Briefcase,
-      features: ["MISA Registration", "Commercial Registration", "RHQ Setup", "National Address"]
+      features: ["MISA Registration", "Commercial Registration", "RHQ Setup", "Business Structure Advisory"]
     },
     {
-      title: "VAT Services",
-      description: "Registration, compliance, and ongoing guidance",
-      icon: FileText,
-      features: ["VAT Registration", "Monthly/Quarterly Returns", "Compliance Guidance", "Advisory Services"]
+      title: "VAT Compliance Support",
+      description: "End-to-end support for VAT setup, Compliances, reconciliations, and assistance in audits.",
+      icon: Calculator,
+      features: ["VAT Registration", "Monthly/Quarterly Returns", "Compliance Guidance", "Audit Support"]
     },
     {
-      title: "Tax Compliance",
-      description: "Comprehensive tax services and coordination",
+      title: "Withholding Tax (WHT) Advisory Support",
+      description: "Accurate WHT assessment on cross-border payments and contract reviews",
       icon: ShieldCheck,
-      features: ["Withholding Tax", "Zakat & Income Tax", "ZATCA Coordination", "Annual Returns"]
+      features: ["WHT Assessment", "Cross-border Payments", "Contract Reviews", "ZATCA Coordination"]
     },
     {
-      title: "Transfer Pricing",
-      description: "Complete TP documentation and compliance",
+      title: "Tax Assistance",
+      description: "Support with Zakat, Transfer Pricing, and KSA tax compliance.",
       icon: Scale,
-      features: ["Master File Preparation", "Local File Documentation", "CbC Reporting", "Disclosure Forms"]
+      features: ["Zakat Compliance", "Transfer Pricing", "Tax Planning", "KSA Tax Advisory"]
+    },
+    {
+      title: "Audit Support Services",
+      description: "Assistance in Annual Audit as per KSA requirements",
+      icon: FileCheck,
+      features: ["Annual Audit Support", "Financial Statement Review", "Compliance Audit", "Audit Documentation"]
+    },
+    {
+      title: "Ultimate Beneficiary Ownership Advisory",
+      description: "Guidance on UBO filing and other ministry updates.",
+      icon: UserCheck,
+      features: ["UBO Filing", "Beneficial Ownership", "Ministry Updates", "Compliance Reporting"]
     }
   ];
 
@@ -616,30 +628,35 @@ export default function MacRossKSALanding() {
   </h2>
 </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 group border border-gray-100"
               >
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center">
-                    <service.icon className="w-8 h-8 text-red-600" />
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-10 h-10 text-red-600" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{service.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
                 </div>
                 
                 <div className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span className="text-gray-700">{feature}</span>
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
+                
+                {/* <div className="mt-6 pt-4 border-t border-gray-100">
+                  <button className="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div> */}
               </div>
             ))}
           </div>
