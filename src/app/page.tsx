@@ -5,29 +5,54 @@ import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCi
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
 import banner2 from '../../public/1.png';
-export default function MacRossKSALanding() {
+export default function UAEEInvoicingLanding() {
   const [activeService, setActiveService] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [activeCompliance, setActiveCompliance] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-   const projects1 = [
-  "NEOM is a $500 billion smart city initiative aiming to redefine urban living. It will feature cutting-edge technologies, clean energy, and AI integration, making it a global model of sustainable development.",
-  "The Red Sea Project is a luxury regenerative tourism destination with untouched islands and marine ecosystems. It offers sustainable resorts and immersive travel experiences along Saudi’s pristine coastline.",
-  "Qiddiya is envisioned as the kingdom’s entertainment, sports, and cultural capital. It includes theme parks, motor sports, and arts venues to transform how Saudis and tourists experience leisure.",
-  "AMAALA is an ultra-luxury tourism project focusing on wellness, arts, and environmental harmony. Situated on the Red Sea, it caters to elite travelers seeking bespoke health and cultural experiences.",
-  "The Line is a 170 km linear smart city within NEOM that will be car-free and powered by AI. It’s designed to preserve nature while offering futuristic, high-density, and walkable urban living.",
-  "Diriyah Gate is a cultural heritage site transforming the birthplace of the Saudi Kingdom into a global tourism hub. It blends traditional Najdi architecture with modern hospitality and experiences.",
-  "King Salman Energy Park (SPARK) is an advanced industrial hub for energy and manufacturing. It aims to localize the supply chain and position Saudi Arabia as a global energy innovation leader."
+  const [activeFAQ, setActiveFAQ] = useState(0);
+
+  const faqItems = [
+    {
+      question: "What is the procedure to deliver the tax invoice to the customer?",
+      answer: "Businesses in the UAE must engage with an Accredited Service Provider to issue and receive eInvoices. The buyer's electronic address (endpoint) will be used to share the invoice over the Peppol network."
+    },
+    {
+      question: "Will it be required that every legal entity within a VAT tax group must integrate with an Accredited Service Provider separately?",
+      answer: "Each member of the VAT group must have an endpoint via a UAE Accredited Service Provider. All entities that are part of VAT tax group cannot have a single integration through the representative member."
+    },
+    {
+      question: "Who will create and exchange the eInvoice in case of Self-billing?",
+      answer: "In case of self-billing the buyer (customer) should create the eInvoice and will exchange the document with the seller and will also report to the FTA via the Accredited Service Provider."
+    },
+    {
+      question: "Does business to business (B2B) include also businesses not VAT registered?",
+      answer: "The eInvoicing framework encompasses all business-to-business (B2B) and business-to-government (B2G) transactions, regardless of the VAT registration status of the entities involved."
+    },
+    {
+      question: "What are the allowed modes of error correction on tax invoices under the eInvoicing system?",
+      answer: "In case of any errors in tax invoices, a credit note is required to be issued for its rectification. Standard amendment processes through credit notes ensure proper audit trail and compliance."
+    }
+  ];
+
+   const eInvoicingTrends = [
+  "Over 70 countries worldwide have implemented or are implementing mandatory e-invoicing systems, demonstrating the global shift towards digital compliance.",
+  "European Union leads with widespread adoption across member states, resulting in 15-20% reduction in processing costs and improved tax compliance.",
+  "Latin America pioneered real-time e-invoicing with countries like Brazil, Mexico, and Chile achieving 95%+ compliance rates within 3-5 years.",
+  "Asia-Pacific region shows rapid adoption with India, Singapore, and Malaysia implementing comprehensive e-invoicing frameworks for B2B transactions.",
+  "Middle East countries including Saudi Arabia, Egypt, and now UAE are implementing e-invoicing to combat tax evasion and improve business efficiency.",
+  "Studies show e-invoicing reduces invoice processing time by 60-80% and paper costs by 90%, while improving cash flow and reducing errors.",
+  "Global e-invoicing market is expected to reach $24.7 billion by 2027, driven by regulatory mandates and digital transformation initiatives."
 ];
 
-   const projects = [
-    "NEOM – Future City Development",
-    "Red Sea Project – Luxury Tourism", 
-    "Qiddiya – Entertainment Capital",
-    "AMAALA – Ultra-luxury Tourism",
-    "The Line – Linear Smart City",
-    "Diriyah Gate – Cultural Heritage",
-    "King Salman Energy Park – Industrial Hub"
+   const globalTrends = [
+    "Europe – Comprehensive Implementation",
+    "Latin America – Real-time Pioneers", 
+    "Asia-Pacific – Rapid Digital Adoption",
+    "Middle East – Emerging Compliance",
+    "North America – Voluntary Adoption",
+    "Africa – Government-led Initiatives",
+    "Global Market – $24.7B by 2027"
   ];
   useEffect(() => {
     const handleScroll = () => {
@@ -48,129 +73,129 @@ export default function MacRossKSALanding() {
     };
   }, [mobileMenuOpen]);
 
-  const megaProjects = [
-    "NEOM - Future City Development",
-    "Red Sea Project - Luxury Tourism",
-    "Qiddiya - Entertainment Capital",
-    "AMAALA - Ultra-luxury Tourism",
-    "The Line - Linear Smart City",
-    "Diriyah Gate - Cultural Heritage",
-    "King Salman Energy Park - Industrial Hub"
+  const timelinePhases = [
+    "Phase 1: Large Companies (Revenue > AED 500M) - January 2026",
+    "Phase 2: Medium Companies (Revenue > AED 375M) - January 2027",
+    "Phase 3: Small Companies (Revenue > AED 250M) - January 2028",
+    "Phase 4: All VAT Registered Businesses - January 2029",
+    "Preparation Period: Assessment & System Integration - Now",
+    "ASP Selection: Choose Accredited Service Provider - Q2 2025",
+    "Testing Phase: Pre-implementation Testing - Q4 2025"
   ];
 
-  const businessSetupSteps = [
+  const eInvoicingSteps = [
     {
-      title: "Foreign Investment License",
-      description: "MISA Registration for Foreign Companies",
+      title: "Business Assessment",
+      description: "Evaluate Current Systems",
+      icon: Search,
+      details: "Comprehensive assessment of existing invoicing processes and system capabilities"
+    },
+    {
+      title: "ASP Selection",
+      description: "Choose Service Provider",
+      icon: Handshake,
+      details: "Select and engage with a UAE Accredited Service Provider for e-invoicing"
+    },
+    {
+      title: "System Integration",
+      description: "Connect Your Systems",
       icon: Globe,
-      details: "Ministry of Investment Saudi Arabia (MISA) license for foreign entities"
+      details: "Integrate existing ERP/accounting systems with ASP platform via APIs"
     },
     {
-      title: "Commercial Registration",
-      description: "CR issued by MOCI",
-      icon: FileText,
-      details: "Ministry of Commerce registration for KSA Local/GCC entities"
-    },
-    {
-      title: "National Address",
-      description: "Company Address Registration",
-      icon: MapPin,
-      details: "Register and obtain official company national address"
-    },
-    {
-      title: "MHRSD Registration",
-      description: "Human Resources Ministry",
-      icon: Users,
-      details: "Registration with Ministry of Human Resource & Social Development"
-    },
-    {
-      title: "GOSI Application",
-      description: "Social Insurance Registration",
+      title: "Testing & Validation",
+      description: "Pre-Go-Live Testing",
       icon: Shield,
-      details: "General Organization for Social Insurance registration"
+      details: "Comprehensive testing of invoice generation, transmission, and receipt processes"
     },
     {
-      title: "Portal Registration",
-      description: "Muqeem & Qiwa Platforms",
-      icon: Building,
-      details: "Register at government portals for compliance management"
+      title: "Staff Training",
+      description: "Team Preparation",
+      icon: Users,
+      details: "Training finance and operations teams on new e-invoicing workflows"
+    },
+    {
+      title: "Go-Live Support",
+      description: "Implementation Support",
+      icon: CheckCircle,
+      details: "Ongoing support during transition to ensure smooth e-invoicing operations"
     }
   ];
 
-  const complianceItems = [
+  const complianceTimeline = [
     {
-      title: "GOSI Returns",
-      frequency: "Monthly",
-      dueDate: "15th of subsequent month",
-      description: "Monthly GOSI returns for local and expat employees with payroll matching",
+      title: "Phase 1: Large Companies",
+      frequency: "January 2026",
+      dueDate: "Revenue > AED 500M",
+      description: "First wave of implementation targeting largest enterprises in UAE",
       color: "red"
     },
     {
-      title: "VAT Compliance",
-      frequency: "Monthly/Quarterly",
-      dueDate: "Based on revenue threshold",
-      description: "Quarterly if revenue < SAR 40M, Monthly if revenue > SAR 40M",
-      color: "red"
+      title: "Phase 2: Medium Companies",
+      frequency: "January 2027",
+      dueDate: "Revenue > AED 375M",
+      description: "Second wave expanding to medium-sized businesses across sectors",
+      color: "orange"
     },
     {
-      title: "Withholding Tax",
-      frequency: "Monthly & Annual",
-      dueDate: "15th of month / 120 days after YE",
-      description: "Monthly WHT returns and annual consolidated returns",
-      color: "red"
+      title: "Phase 3: Small Companies",
+      frequency: "January 2028",
+      dueDate: "Revenue > AED 250M",
+      description: "Third wave including smaller businesses with significant revenue",
+      color: "yellow"
     },
     {
-      title: "Financial Statements",
-      frequency: "Annual",
-      dueDate: "90 days from FY end",
-      description: "Audited financial statements and Qawaem portal filing",
-      color: "red"
+      title: "Phase 4: All VAT Registered",
+      frequency: "January 2029",
+      dueDate: "All VAT Entities",
+      description: "Final phase covering all VAT-registered businesses regardless of size",
+      color: "green"
     },
     {
-      title: "ZATCA Returns",
-      frequency: "Annual",
-      dueDate: "120 days from FY end",
-      description: "Corporate Zakat and Tax returns with transfer pricing disclosure",
-      color: "red"
+      title: "Preparation Window",
+      frequency: "Now - 2025",
+      dueDate: "Assessment Period",
+      description: "Critical preparation period for system assessment and ASP selection",
+      color: "blue"
     }
   ];
 
   const services = [
     {
-      title: "Assistance in Company Formation (MISA /CR / RHQ)",
-      description: "Efficient setup with the right structure to align with your commercial goals.",
-      icon: Briefcase,
-      features: ["MISA Registration", "Commercial Registration", "RHQ Setup", "Business Structure Advisory"]
-    },
-    {
-      title: "VAT Compliance Support",
-      description: "End-to-end support for VAT setup, Compliances, reconciliations, and assistance in audits.",
-      icon: Calculator,
-      features: ["VAT Registration", "Monthly/Quarterly Returns", "Compliance Guidance", "Audit Support"]
-    },
-    {
-      title: "Withholding Tax (WHT) Advisory Support",
-      description: "Accurate WHT assessment on cross-border payments and contract reviews",
-      icon: ShieldCheck,
-      features: ["WHT Assessment", "Cross-border Payments", "Contract Reviews", "ZATCA Coordination"]
-    },
-    {
-      title: "Tax Assistance",
-      description: "Support with Zakat, Transfer Pricing, and KSA tax compliance.",
-      icon: Scale,
-      features: ["Zakat Compliance", "Transfer Pricing", "Tax Planning", "KSA Tax Advisory"]
-    },
-    {
-      title: "Audit Support Services",
-      description: "Assistance in Annual Audit as per KSA requirements",
-      icon: FileCheck,
-      features: ["Annual Audit Support", "Financial Statement Review", "Compliance Audit", "Audit Documentation"]
-    },
-    {
-      title: "Ultimate Beneficiary Ownership Advisory",
-      description: "Guidance on UBO filing and other ministry updates.",
+      title: "Expert Local Guidance",
+      description: "Deep knowledge of UAE VAT and FTA procedures from Mac and Ross.",
       icon: UserCheck,
-      features: ["UBO Filing", "Beneficial Ownership", "Ministry Updates", "Compliance Reporting"]
+      features: ["UAE Tax Expertise", "FTA Compliance", "Local Regulatory Knowledge", "Business Advisory"]
+    },
+    {
+      title: "Proven Global Technology",
+      description: "Taxilla's robust, battle-tested e-invoicing compliance platform.",
+      icon: Globe,
+      features: ["25+ Countries Experience", "Cutting-edge Software", "API Integration", "Real-time Processing"]
+    },
+    {
+      title: "End-to-End Support",
+      description: "From initial system assessment and ASP integration to ongoing support and training.",
+      icon: Handshake,
+      features: ["System Assessment", "ASP Integration", "Staff Training", "Ongoing Support"]
+    },
+    {
+      title: "System Assessment & Planning",
+      description: "Comprehensive evaluation of your current invoicing processes and readiness.",
+      icon: Search,
+      features: ["Process Analysis", "Gap Assessment", "Timeline Planning", "Risk Evaluation"]
+    },
+    {
+      title: "ASP Integration Services",
+      description: "Seamless integration with Accredited Service Providers and your existing systems.",
+      icon: BarChart3,
+      features: ["API Development", "System Integration", "Testing Support", "Go-live Assistance"]
+    },
+    {
+      title: "Training & Change Management",
+      description: "Comprehensive training programs for your finance and operations teams.",
+      icon: Users,
+      features: ["Staff Training", "Process Documentation", "Change Management", "Best Practices"]
     }
   ];
 
@@ -246,10 +271,11 @@ export default function MacRossKSALanding() {
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="text-white hover:text-red-600 transition-colors">About KSA</a>
-            <a href="#setup" className="text-white hover:text-red-600 transition-colors">Business Setup</a>
-            <a href="#compliance" className="text-white hover:text-red-600 transition-colors">Compliance</a>
+            <a href="#about" className="text-white hover:text-red-600 transition-colors">Global Trends</a>
+            <a href="#setup" className="text-white hover:text-red-600 transition-colors">E-Invoicing Process</a>
+            <a href="#compliance" className="text-white hover:text-red-600 transition-colors">Timeline</a>
             <a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a>
+            <a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a>
             <a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a>
           </div>
           {/* Hamburger for Mobile */}
@@ -275,10 +301,11 @@ export default function MacRossKSALanding() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <a href="#about" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>About KSA</a>
-            <a href="#setup" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Business Setup</a>
-            <a href="#compliance" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Compliance</a>
+            <a href="#about" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Global Trends</a>
+            <a href="#setup" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>E-Invoicing Process</a>
+            <a href="#compliance" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Timeline</a>
             <a href="#services" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
+            <a href="#faq" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             <a href="#contact" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
           </div>
         )}
@@ -295,20 +322,20 @@ export default function MacRossKSALanding() {
             <div className="lg:w-2/3 mb-12 lg:mb-0">
               <div className="animate-fade-in-up">
                 <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 ">
-                  Expand with 
-                  <span className="text-red-600 block">Confidence</span>
-                  <span className="text-2xl text-white font-normal">KSA Company Formation & Regulatory Insights</span>
+                  UAE E-Invoicing:
+                  <span className="text-red-600 block">Your Countdown</span>
+                  <span className="text-2xl text-white font-normal">to Compliance Has Begun</span>
                 </h1>
                 <p className="text-xl text-white mb-8 leading-relaxed">
-                  Your trusted partner for seamless business setup and compliance management in the Kingdom of Saudi Arabia. Navigate Vision 2030 opportunities with expert guidance.
+                  Time is ticking for E-invoicing implementation in the UAE. Don't wait - start your assessment process now with Mac & Ross and Taxilla's proven expertise.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
-                    Start Your KSA Journey
+                    Start Your E-Invoicing Assessment
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </button>
                   <button className="border-2 border-gray-300 text-white px-8 py-4 rounded-lg font-semibold hover:border-red-600 hover:text-red-600 transition-colors">
-                    Schedule Consultation
+                    Download UAE Guide
                   </button>
                 </div>
               </div>
@@ -334,6 +361,95 @@ export default function MacRossKSALanding() {
         </div>
       </section>
 
+      {/* E-Invoicing Definition Section */}
+      <section id="definition" className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="md:w-full text-center mb-12">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              UNDERSTANDING E-INVOICING
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              What is E-Invoicing
+              <span className="text-red-600"> in UAE</span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoicing IS</h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, 
+                  integrated electronic format. E-invoicing involves the electronic generation, transmission, and receipt 
+                  of invoices, replacing traditional paper-based methods.
+                </p>
+              </div>
+
+              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices are NOT</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  E-Invoices are not simply digital versions of paper invoices which can be:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span className="text-gray-700">PDFs or Word documents</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span className="text-gray-700">Image files i.e.; JPG or TIFF</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span className="text-gray-700">Unstructured HTML invoices (e.g., emails or webpages)</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span className="text-gray-700">Scanned paper invoices (OCR)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">5-Corner Model</h3>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                    <span className="font-semibold">Supplier (Seller)</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                    <span className="font-semibold">Buyer (Customer)</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                    <span className="font-semibold">Accredited Service Provider (ASP)</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                    <span className="font-semibold">Peppol Network</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                    <span className="font-semibold">Federal Tax Authority (FTA)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* KSA Overview */}
       <section id="about">
     <DeliveryMethodsSection/>
@@ -342,17 +458,17 @@ export default function MacRossKSALanding() {
         <div className="container max-w-6xl mx-auto">
          <div className="md:w-full text-center mb-12">
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-    SETUP PROCESS
+    IMPLEMENTATION PROCESS
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-    KSA Business 
-    <span className="text-red-600"> Setup </span>Process
+    UAE E-Invoicing 
+    <span className="text-red-600"> Implementation </span>Process
   </h2>
 </div>
 
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {businessSetupSteps.map((step, index) => (
+            {eInvoicingSteps.map((step, index) => (
               <div 
                 key={index}
                 className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-red-400 hover:bg-red-100 group"
@@ -399,17 +515,17 @@ export default function MacRossKSALanding() {
           <div className='max-w-6xl mx-auto flex flex-col md:flex-row  gap-8'>
               <div className="">
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-    GIGA & MEGA PROJECTS
+    GLOBAL E-INVOICING TRENDS
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-    Driving<br />
-    Saudi Arabia’s<br />
-    <span className="text-red-600">growth</span> and innovation.
+    E-Invoicing<br />
+    Worldwide<br />
+    <span className="text-red-600">Adoption</span> & Growth
   </h2>
 </div>
 
       <div className="w-220 h-100 rounded bg-gray-800 flex gap-1 p-2">
-        {projects.map((project, index) => (
+        {globalTrends.map((project, index) => (
           <div
             key={index}
             className="h-full flex-1 overflow-hidden cursor-pointer rounded-sm transition-all duration-500 bg-white border-2 border-red-600 flex justify-center items-center hover:flex-[4] group"
@@ -426,7 +542,7 @@ export default function MacRossKSALanding() {
                 className="min-w-56 p-2 text-center transition-all duration-500 text-gray-800 tracking-wider text-xs opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 overflow-hidden"
                 style={{ transitionProperty: 'opacity, max-height' }}
               >
-                {projects1[index]}
+                {eInvoicingTrends[index]}
               </span>
             </div>
           </div>
@@ -439,18 +555,18 @@ export default function MacRossKSALanding() {
   <div className='max-w-6xl mx-auto flex flex-col md:flex-row gap-8 w-full'>
     <div className="">
       <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-        GIGA & MEGA PROJECTS
+        GLOBAL E-INVOICING TRENDS
       </p>
       <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-        Driving<br />
-        Saudi Arabia's<br />
-        <span className="text-red-600">growth</span> and innovation.
+        E-Invoicing<br />
+        Worldwide<br />
+        <span className="text-red-600">Adoption</span> & Growth
       </h2>
     </div>
 
     {/* Accordion layout for mobile */}
     <div className="w-full space-y-2">
-      {projects.map((project, index) => (
+      {globalTrends.map((project, index) => (
         <div
           key={index}
           className="bg-white rounded-lg border-2 border-red-600 overflow-hidden"
@@ -476,7 +592,7 @@ export default function MacRossKSALanding() {
           >
             <div className="p-4 pt-0 border-t border-red-200 bg-red-50">
               <p className="text-gray-800 text-sm leading-relaxed">
-                {projects1[index]}
+                {eInvoicingTrends[index]}
               </p>
             </div>
           </div>
@@ -494,18 +610,18 @@ export default function MacRossKSALanding() {
          
             <div className="md:w-full text-center mb-6">
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-    Compliances
+    IMPLEMENTATION TIMELINE
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-    KSA Key
-    <span className="text-red-600"> Compliances </span>
+    UAE E-Invoicing
+    <span className="text-red-600"> Timeline </span>
   </h2>
 </div>
 
 
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-4">
-              {complianceItems.map((item, index) => (
+              {complianceTimeline.map((item, index) => (
                 <div 
                   key={index}
                   className={`px-6 py-2 rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-105 border-l-4  ${
@@ -532,28 +648,28 @@ export default function MacRossKSALanding() {
             </div>
 
             <div className="bg-red-100 rounded-2xl p-8 shadow-xl">
-              <h3 className="text-4xl font-bold text-gray-900 mb-6">{complianceItems[activeCompliance].title}</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6">{complianceTimeline[activeCompliance].title}</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Calendar className="w-6 h-6 text-red-600" />
                   <div className='text-xl'>
-                    <span className="font-semibold text-gray-900">Frequency:</span>
-                    <span className="ml-2 text-gray-700">{complianceItems[activeCompliance].frequency}</span>
+                    <span className="font-semibold text-gray-900">Implementation Date:</span>
+                    <span className="ml-2 text-gray-700">{complianceTimeline[activeCompliance].frequency}</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <Clock className="w-6 h-6 text-red-600" />
                   <div className='text-xl'>
-                    <span className="font-semibold text-gray-900">Due Date:</span>
-                    <span className="ml-2 text-gray-700">{complianceItems[activeCompliance].dueDate}</span>
+                    <span className="font-semibold text-gray-900">Criteria:</span>
+                    <span className="ml-2 text-gray-700">{complianceTimeline[activeCompliance].dueDate}</span>
                   </div>
                 </div>
                 
                 <div className="bg-gray-50 p-6 rounded-lg text-2xl hidden md:block">
                   <h4 className="font-semibold text-gray-900 mb-3">Details</h4>
-                  <p className="text-gray-700 leading-relaxed">{complianceItems[activeCompliance].description}</p>
+                  <p className="text-gray-700 leading-relaxed">{complianceTimeline[activeCompliance].description}</p>
                 </div>
               </div>
             </div>
@@ -620,11 +736,11 @@ export default function MacRossKSALanding() {
           
           <div className="md:w-full text-center mb-6">
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-  Services
+  Partnership Services
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-  Mac & Ross 
-    <span className="text-red-600"> Services </span>in KSA
+  Mac & Ross + Taxilla 
+    <span className="text-red-600"> E-Invoicing </span>Solutions
   </h2>
 </div>
 
@@ -663,6 +779,170 @@ export default function MacRossKSALanding() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 px-6 bg-red-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="md:w-full text-center mb-12">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              UAE E-Invoicing
+              <span className="text-red-600"> FAQ </span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <div 
+                  key={index}
+                  className={`px-6 py-4 rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-105 border-l-4  ${
+                    activeFAQ === index 
+                      ? 'bg-red-50 border-red-500 shadow-lg' 
+                      : 'bg-white hover:shadow-lg border-red-200 border'
+                  }`}
+                  onClick={() => setActiveFAQ(index)}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{item.question}</h4>
+                    </div>
+                    <ChevronRight 
+                      className={`w-5 h-5 text-red-600 transition-transform duration-300 ${
+                        activeFAQ === index ? 'rotate-90' : ''
+                      }`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{faqItems[activeFAQ].question}</h3>
+              
+              <div className="space-y-6">
+                <div className="bg-red-50 p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed text-lg">{faqItems[activeFAQ].answer}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="md:w-full text-center mb-12">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              TRUSTED PARTNERSHIP
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              Your Trusted Partner for
+              <span className="text-red-600"> UAE E-Invoicing </span>Compliance
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="bg-gray-50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">More than a decade</h3>
+                <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                  Mac & Ross has been a leading certified audit and tax consulting firm in the UAE, providing trusted 
+                  guidance to businesses navigating complex regulatory landscapes.
+                </p>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  We are proud to partner with Taxilla, a global leader in e-invoicing solutions with a proven presence 
+                  in over 25 countries. This strategic alliance allows us to provide our clients with an end-to-end, 
+                  seamless compliance experience.
+                </p>
+              </div>
+
+              <div className="bg-red-50 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Combined Offering</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <span className="font-semibold text-gray-900">Expert Local Guidance:</span>
+                      <span className="text-gray-700 ml-2">Deep knowledge of UAE VAT and FTA procedures from Mac and Ross.</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <span className="font-semibold text-gray-900">Proven Global Technology:</span>
+                      <span className="text-gray-700 ml-2">Taxilla's robust, battle-tested e-invoicing compliance platform.</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <span className="font-semibold text-gray-900">End-to-End Support:</span>
+                      <span className="text-gray-700 ml-2">From initial system assessment and ASP integration to ongoing support and training.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center space-y-8">
+              <div className="bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Partnership Logos</h3>
+                <div className="space-y-6">
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="flex items-center justify-center space-x-4">
+                      <div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">M&R</span>
+                      </div>
+                      <span className="text-2xl font-bold text-gray-900">+</span>
+                      <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">TAX</span>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 mt-4 font-semibold">Mac & Ross + Taxilla</p>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <h4 className="font-semibold text-gray-900 mb-3">Certifications & Partners</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-gray-100 p-3 rounded text-sm font-medium text-gray-700">
+                        UAE Licensed
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded text-sm font-medium text-gray-700">
+                        FTA Approved
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded text-sm font-medium text-gray-700">
+                        Peppol Certified
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded text-sm font-medium text-gray-700">
+                        ISO Compliant
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-100 p-6 rounded-xl">
+                <p className="text-sm text-gray-600 italic">
+                  *We are discussing with Taxilla for use of client logos, once confirmed we can put.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-2xl font-bold text-gray-900 mb-4">
+              Partner with experts you can trust.
+            </p>
+            <p className="text-lg text-gray-700">
+              Ensure a smooth and successful transition to e-invoicing.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
    <section id="contact"
   className="relative py-16 px-6 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen  animate-fade-in-up"
@@ -693,8 +973,8 @@ export default function MacRossKSALanding() {
         {/* Header */}
          <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold mb-6">Ready to Expand to KSA?</h2>
-         
+          <h2 className="text-4xl font-bold mb-6">Ready for UAE E-Invoicing Compliance?</h2>
+          <p className="text-xl text-white/90">Partner with experts you can trust. Ensure a smooth and successful transition to e-invoicing.</p>
         </div>
 
         {/* Two-column layout */}
@@ -707,23 +987,23 @@ export default function MacRossKSALanding() {
                 <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Phone</h4>
-                  <p className="opacity-90 mb-1">+966-55 363 7617</p>
-                  <p className="opacity-90">+966-50 225 4045</p>
+                  <p className="opacity-90 mb-1">+971-50 123 4567</p>
+                  <p className="opacity-90">+971-55 987 6543</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 group">
                 <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Email</h4>
-                  <p className="opacity-90 mb-1">info@mnrksa.com</p>
-                  <p className="opacity-90">compliance@mnrksa.com</p>
+                  <p className="opacity-90 mb-1">info@macross.ae</p>
+                  <p className="opacity-90">einvoicing@macross.ae</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 group">
                 <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Location</h4>
-                  <p className="opacity-90">Riyadh, Kingdom of Saudi Arabia</p>
+                  <p className="opacity-90">Dubai, United Arab Emirates</p>
                 </div>
               </div>
              
@@ -732,10 +1012,10 @@ export default function MacRossKSALanding() {
             <div className="pt-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50">
-                  Schedule Consultation
+                  Schedule E-Invoicing Consultation
                 </button>
                 <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50">
-                  Download Brochure
+                  Download UAE E-Invoicing Guide
                 </button>
               </div>
             </div>
@@ -842,10 +1122,11 @@ export default function MacRossKSALanding() {
             </div>
             
             <ul className="font-semibold mb-8 leading-10">
-              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">About KSA</a></li>
-              <li><a href="#setup" className="text-white hover:text-red-600 transition-colors">Business Setup</a></li>
-              <li><a href="#compliance" className="text-white hover:text-red-600 transition-colors">Compliance</a></li>
+              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">Global Trends</a></li>
+              <li><a href="#setup" className="text-white hover:text-red-600 transition-colors">E-Invoicing Process</a></li>
+              <li><a href="#compliance" className="text-white hover:text-red-600 transition-colors">Timeline</a></li>
               <li><a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a></li>
+              <li><a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a></li>
               <li><a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a></li>
             </ul>
             
@@ -865,16 +1146,16 @@ export default function MacRossKSALanding() {
                   <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Phone</h4>
-                    <p className="opacity-90 mb-1">+966-55 363 7617</p>
-                    <p className="opacity-90">+966-50 225 4045</p>
+                    <p className="opacity-90 mb-1">+971-50 123 4567</p>
+                    <p className="opacity-90">+971-55 987 6543</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 group">
                   <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Email</h4>
-                    <p className="opacity-90 mb-1">info@mnrksa.com</p>
-                    <p className="opacity-90">compliance@mnrksa.com</p>
+                    <p className="opacity-90 mb-1">info@macross.ae</p>
+                    <p className="opacity-90">einvoicing@macross.ae</p>
                   </div>
                 </div>
                 
@@ -888,7 +1169,7 @@ export default function MacRossKSALanding() {
                   <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Location</h4>
-                    <p className="opacity-90">Riyadh, Kingdom of Saudi Arabia</p>
+                    <p className="opacity-90">Dubai, United Arab Emirates</p>
                   </div>
                 </div>
               </div>
