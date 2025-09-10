@@ -676,49 +676,8 @@ export default function UAEEInvoicingLanding() {
           </div>
 
           {/* Transfer Pricing Section */}
-          {/* <div className="mt-16 bg-red-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Transfer Pricing Thresholds</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-xl">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Documentation Requirements</h4>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between border-b pb-2">
-                    <span className="font-medium">Phase 1 (2024-2026):</span>
-                    <span className="text-red-600">≤ SAR 48M</span>
-                  </div>
-                  <div className="flex justify-between border-b pb-2">
-                    <span className="font-medium">Phase 2 (2027+):</span>
-                    <span className="text-red-600"> SAR 48M</span>
-                  </div>
-                  <div className="flex justify-between border-b pb-2">
-                    <span className="font-medium">Foreign Companies:</span>
-                    <span className="text-red-600"> SAR 6M</span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-xl">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Required Documentation</h4>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Disclosure Form (All transactions)</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Local File (Threshold based)</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Master File (Threshold based)</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Country-by-Country Reporting</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div> */}
+          
+          
         </div>
       </section>
         {/* <div className="md:w-full text-center mb-6">
