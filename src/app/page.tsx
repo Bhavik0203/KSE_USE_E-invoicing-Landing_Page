@@ -680,15 +680,7 @@ export default function UAEEInvoicingLanding() {
           
         </div>
       </section>
-        {/* <div className="md:w-full text-center mb-6">
-  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-  Services
-  </p>
-  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-  Mac & Ross 
-    <span className="text-red-600"> Services </span>in KSA
-  </h2>
-</div> */}
+   
       {/* Services */}
       <section id="services" className="py-16 px-6 bg-gray-900">
         <div className="container mx-auto">
