@@ -1466,9 +1466,9 @@ export default function UAEEInvoicingLanding() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 eInvoice ME. All rights reserved | Crafted with care by Digitalize The Globe.</p>
-          </div>
+            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+              <p>&copy; 2025 eInvoice ME. All rights reserved | Crafted with care by <a href="https://digitalizetheglobe.com/" target="_blank" rel="noopener noreferrer" className='text-red-600 font-bold cursor-pointer hover:text-red-500 transition-colors duration-300'>Digitalize The Globe</a>.</p>
+            </div>
         </div>
       </footer>
     </div>
