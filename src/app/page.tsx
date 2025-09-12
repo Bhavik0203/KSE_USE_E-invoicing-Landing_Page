@@ -1406,7 +1406,7 @@ export default function UAEEInvoicingLanding() {
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <FileText className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">eInvoice ME</span>
+                <span className="text-xl font-bold">E-Invoicing UAE</span>
               </div>
               <p className="text-gray-400">Leading the digital transformation in Middle East invoicing.</p>
             </div>

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "eInvoice ME",
-  description: "eInvoice ME",
+  title: "eInvoice UAE",
+  description: "eInvoice UAE",
 };
 
 export default function RootLayout({
