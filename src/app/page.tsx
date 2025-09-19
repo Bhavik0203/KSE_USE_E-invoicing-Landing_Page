@@ -5,9 +5,11 @@ import Image from 'next/image';
 import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search } from 'lucide-react';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
+import bn from '../../public/model.jpg';
 import banner2 from '../../public/1.png';
 import mrLogo from '../../public/Picture1.png';
 import taxLogo from '../../public/Picture2.png';
+import UAEInvoiceModel from './components/invoicemodel';
 export default function UAEEInvoicingLanding() {
   const [activeService, setActiveService] = useState(0);
   const [scrolled, setScrolled] = useState(false);
@@ -214,7 +216,7 @@ export default function UAEEInvoicingLanding() {
       title: "Expert Local Guidance",
       description: "Deep knowledge of UAE VAT and FTA procedures from Mac and Ross.",
       icon: UserCheck,
-      features: ["UAE Tax Expertise", "FTA Compliance", "Local Regulatory Knowledge", "Business Advisory"]
+      // features: ["UAE Tax Expertise", "FTA Compliance", "Local Regulatory Knowledge", "Business Advisory"]
     },
     {
       title: "Proven Global Technology",
@@ -227,25 +229,8 @@ export default function UAEEInvoicingLanding() {
       description: "From initial system assessment and ASP integration to ongoing support and training.",
       icon: Handshake,
       features: ["System Assessment", "ASP Integration", "Staff Training", "Ongoing Support"]
-    },
-    {
-      title: "System Assessment & Planning",
-      description: "Comprehensive evaluation of your current invoicing processes and readiness.",
-      icon: Search,
-      features: ["Process Analysis", "Gap Assessment", "Timeline Planning", "Risk Evaluation"]
-    },
-    {
-      title: "ASP Integration Services",
-      description: "Seamless integration with Accredited Service Providers and your existing systems.",
-      icon: BarChart3,
-      features: ["API Development", "System Integration", "Testing Support", "Go-live Assistance"]
-    },
-    {
-      title: "Training & Change Management",
-      description: "Comprehensive training programs for your finance and operations teams.",
-      icon: Users,
-      features: ["Staff Training", "Process Documentation", "Change Management", "Best Practices"]
     }
+    
   ];
 
   const opportunities = [
@@ -435,7 +420,7 @@ export default function UAEEInvoicingLanding() {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex gap-12 items-start">
             <div 
               id="definition-left"
               ref={(el) => {
@@ -443,8 +428,9 @@ export default function UAEEInvoicingLanding() {
                   observerRef.current.observe(el);
                 }
               }}
-              className={`space-y-8 scroll-animate-left ${visibleElements.has('definition-left') ? 'animate' : ''}`}
-            >
+              className={`flex-1 bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl scroll-animate-left ${visibleElements.has('definition-left') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
+              >
+              
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoicing IS</h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
@@ -453,6 +439,19 @@ export default function UAEEInvoicingLanding() {
                   of invoices, replacing traditional paper-based methods.
                 </p>
               </div>
+
+              
+            </div>
+
+            <div 
+              id="definition-right"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`flex-1 bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl scroll-animate-right ${visibleElements.has('definition-right') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
+            >
 
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices are NOT</h3>
@@ -479,41 +478,85 @@ export default function UAEEInvoicingLanding() {
                 </ul>
               </div>
             </div>
+          
+            
+          </div>
 
-            <div 
-              id="definition-right"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl scroll-animate-right ${visibleElements.has('definition-right') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">5-Corner Model</h3>
-              <div className="space-y-4">
-                {[
-                  { num: 1, text: "Supplier (Seller)" },
-                  { num: 2, text: "Buyer (Customer)" },
-                  { num: 3, text: "Accredited Service Provider (ASP)" },
-                  { num: 4, text: "Peppol Network" },
-                  { num: 5, text: "Federal Tax Authority (FTA)" }
-                ].map((item, index) => (
+             <div className='flex justify-center items-center px-4'>
+              <Image 
+                src={bn} 
+                alt='E-Invoicing' 
+                width={1000} 
+                height={1000} 
+                className='w-full max-w-4xl h-auto object-contain'
+              />
+            </div>
+        </div>
+      </section>
+       {/* FAQ Section */}
+       <section id="faq" className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div 
+            id="faq-header"
+            ref={(el) => {
+              if (el && observerRef.current) {
+                observerRef.current.observe(el);
+              }
+            }}
+            className={`text-center mb-12 scroll-animate ${visibleElements.has('faq-header') ? 'animate' : ''}`}
+          >
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              UAE E-Invoicing
+              <span className="text-red-600"> FAQ </span>
+            </h2>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <div 
+                  key={index}
+                  id={`faq-item-${index}`}
+                  ref={(el) => {
+                    if (el && observerRef.current) {
+                      observerRef.current.observe(el);
+                    }
+                  }}
+                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${
+                    visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
+                  } hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <div 
-                    key={index}
-                    className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 hover:scale-105 group"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="px-6 py-4 cursor-pointer transition-all duration-300 hover:bg-gray-200 group"
+                    onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
                   >
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold group-hover:animate-bounce">
-                        {item.num}
+                    <div className="flex justify-between items-center">
+                      <h4 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-red-600 transition-colors duration-300">{item.question}</h4>
+                      <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
+                        <ChevronRight 
+                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${
+                            activeFAQ === index ? 'rotate-90' : ''
+                          }`}
+                        />
                       </div>
-                      <span className="font-semibold group-hover:text-red-600 transition-colors duration-300">
-                        {item.text}
-                      </span>
                     </div>
                   </div>
-                ))}
-              </div>
+                  
+                  <div 
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -962,18 +1005,7 @@ export default function UAEEInvoicingLanding() {
                   <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
                 </div>
                 
-                <div className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <div 
-                      key={featureIndex} 
-                      className="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300 group"
-                      style={{ animationDelay: `${featureIndex * 0.05}s` }}
-                    >
-                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 group-hover:animate-bounce group-hover:text-green-500 transition-colors duration-300" />
-                      <span className="text-gray-700 text-sm group-hover:text-gray-800 transition-colors duration-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+               
                 
                 {/* <div className="mt-6 pt-4 border-t border-gray-100">
                   <button className="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center space-x-2">
@@ -987,74 +1019,7 @@ export default function UAEEInvoicingLanding() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div 
-            id="faq-header"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`text-center mb-12 scroll-animate ${visibleElements.has('faq-header') ? 'animate' : ''}`}
-          >
-            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-              FREQUENTLY ASKED QUESTIONS
-            </p>
-            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-              UAE E-Invoicing
-              <span className="text-red-600"> FAQ </span>
-            </h2>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="space-y-4">
-              {faqItems.map((item, index) => (
-                <div 
-                  key={index}
-                  id={`faq-item-${index}`}
-                  ref={(el) => {
-                    if (el && observerRef.current) {
-                      observerRef.current.observe(el);
-                    }
-                  }}
-                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${
-                    visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
-                  } hover:shadow-lg transition-all duration-300 hover:scale-105`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div 
-                    className="px-6 py-4 cursor-pointer transition-all duration-300 hover:bg-gray-200 group"
-                    onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
-                  >
-                    <div className="flex justify-between items-center">
-                      <h4 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-red-600 transition-colors duration-300">{item.question}</h4>
-                      <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
-                        <ChevronRight 
-                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${
-                            activeFAQ === index ? 'rotate-90' : ''
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div 
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Partnership Section */}
       <section className="py-16 px-6 bg-white">
