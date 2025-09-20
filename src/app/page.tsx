@@ -45,23 +45,22 @@ export default function UAEEInvoicingLanding() {
   ];
 
    const eInvoicingTrends = [
-  "Over 70 countries worldwide have implemented or are implementing mandatory e-invoicing systems, demonstrating the global shift towards digital compliance.",
-  "European Union leads with widespread adoption across member states, resulting in 15-20% reduction in processing costs and improved tax compliance.",
-  "Latin America pioneered real-time e-invoicing with countries like Brazil, Mexico, and Chile achieving 95%+ compliance rates within 3-5 years.",
-  "Asia-Pacific region shows rapid adoption with India, Singapore, and Malaysia implementing comprehensive e-invoicing frameworks for B2B transactions.",
-  "Middle East countries including Saudi Arabia, Egypt, and now UAE are implementing e-invoicing to combat tax evasion and improve business efficiency.",
-  "Studies show e-invoicing reduces invoice processing time by 60-80% and paper costs by 90%, while improving cash flow and reducing errors.",
-  "Global e-invoicing market is expected to reach $24.7 billion by 2027, driven by regulatory mandates and digital transformation initiatives."
-];
+  "Contributing to the growth and competitiveness of the economy and utilizing big data",
+  "Reduce human intervention and making the UAE and its fiscal eco system digitally enabled",
+  "Increased transparency and improved audits / cultivating compliance",
+  "Enhanced taxpayer and user experience",
+  "Optimizing cost and core operations whilst reducing processing times encouraging less paper wastage and meeting sustainability objectives",
+  "Reduce the tax gap maximize compliance and tackle the shadow economy"
+ ];
 
    const globalTrends = [
-    "Europe – Comprehensive Implementation",
-    "Latin America – Real-time Pioneers", 
-    "Asia-Pacific – Rapid Digital Adoption",
-    "Middle East – Emerging Compliance",
-    "North America – Voluntary Adoption",
-    "Africa – Government-led Initiatives",
-    "Global Market – $24.7B by 2027"
+    "Economic Contribution",
+    "Digitization",
+    "Effectiveness", 
+    "Taxpayer* Experience",
+    " Efficiency",
+    "Compliance",
+   
   ];
   useEffect(() => {
     const handleScroll = () => {
@@ -167,36 +166,36 @@ export default function UAEEInvoicingLanding() {
       title: "Data Dictionary Release",
       frequency: "09 Feb, 2025",
       dueDate: "Public Consultation",
-      description: "Release of Data Dictionary for Public consultation",
-      color: "green"
+      description: "Release of Data Dictionary for Public consultation ",
+      color: "red"
     },
     {
-      title: "PNT AE Test Bed",
+      title: "PINT AE Test Bed",
       frequency: "09 Apr, 2025",
       dueDate: "Test Environment",
       description: "PNT AE Test Bed Details made available for testing and integration",
-      color: "green"
+      color: "red"
     },
     {
       title: "E-Invoice Legislation",
       frequency: "Q2, 2025",
       dueDate: "Regulatory Framework",
       description: "E-invoice legislation (Tentative) - Legal framework establishment",
-      color: "blue"
+      color: "red"
     },
     {
       title: "Pilot Phase",
       frequency: "Dec, 2025",
       dueDate: "Expected Launch",
       description: "Expected Pilot Phase for selected businesses to test the system",
-      color: "green"
+      color: "red"
     },
     {
       title: "Phase-1 Go-Live",
       frequency: "Jul, 2026",
       dueDate: "E-invoicing & Reporting",
       description: "Phase-1 go-live for e-invoicing and reporting (Tentative)",
-      color: "blue"
+      color: "red"
     }
   ];
 
@@ -637,8 +636,8 @@ export default function UAEEInvoicingLanding() {
         }}
         className={`hidden md:flex justify-end items-center min-h-120 bg-gray-900 p-4 scroll-animate ${visibleElements.has('trends-desktop') ? 'animate' : ''}`}
       >
-          <div className='max-w-6xl mx-auto flex flex-col md:flex-row gap-8'>
-              <div 
+          <div className='flex flex-col md:flex-row gap-8'>
+          <div 
                 id="trends-header"
                 ref={(el) => {
                   if (el && observerRef.current) {
@@ -648,12 +647,12 @@ export default function UAEEInvoicingLanding() {
                 className={`scroll-animate-left ${visibleElements.has('trends-header') ? 'animate' : ''}`}
               >
   <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-    GLOBAL E-INVOICING TRENDS
+    UAE E-INVOICING BACKGROUND
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-    E-Invoicing<br />
-    Worldwide<br />
-    <span className="text-red-600">Adoption</span> & Growth
+    UAE <br/> E-Invoicing<br />
+    <span className="text-red-600">Objectives</span><br />
+    & <br/>Implementation
   </h2>
 </div>
 
@@ -671,13 +670,13 @@ export default function UAEEInvoicingLanding() {
             key={index}
             className="h-full flex-1 overflow-hidden cursor-pointer rounded-sm transition-all duration-700 bg-white border-2 border-red-600 flex justify-center items-center hover:flex-[4] group hover:shadow-2xl hover:scale-105"
             style={{ 
-              minWidth: '56px',
+              minWidth: '28px',
               animationDelay: `${index * 0.1}s`
             }}
           >
             <div className="flex flex-col items-center w-full">
               <span
-                className="min-w-56 p-2 text-center transition-all duration-700 uppercase text-gray-900 tracking-wider text-sm transform group-hover:rotate-0 group-hover:mb-2 -rotate-90 mb-0 group-hover:text-red-600"
+                className="min-w-28 p-2 text-center transition-all duration-700 uppercase text-gray-900 tracking-wider text-sm transform group-hover:rotate-0 group-hover:mb-2 -rotate-90 mb-0 group-hover:text-red-600"
                 style={{ transitionProperty: 'transform, margin-bottom, color' }}
               >
                 {project}
@@ -751,7 +750,7 @@ export default function UAEEInvoicingLanding() {
               className={`w-5 h-5 text-red-600 transition-all duration-300 group-hover:scale-110 ${
                 activeService === index ? 'rotate-90' : ''
               }`}
-            />
+            />:
           </button>
           
           <div 
@@ -801,7 +800,7 @@ export default function UAEEInvoicingLanding() {
               {complianceTimeline.map((item, index) => (
                 <div 
                   key={index}
-                  className={`px-6 py-4 rounded-xl cursor-pointer transition-all duration-300 border-l-4 ${
+                  className={`px-6 py-2 rounded-xl cursor-pointer transition-all duration-300 border-l-4 ${
                     activeCompliance === index 
                       ? `bg-${item.color}-50 border-${item.color}-500 shadow-md` 
                       : 'bg-white hover:shadow-md border-gray-200 border hover:bg-gray-50'
@@ -811,12 +810,12 @@ export default function UAEEInvoicingLanding() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
-                      <div className="flex items-center space-x-4 text-sm mb-2">
+                      <div className="flex items-center space-x-4 text-sm mb-1">
                         <span className={`px-3 py-1 rounded-full text-${item.color}-700 bg-${item.color}-100 font-medium`}>
                           {item.frequency}
                         </span>
                       </div>
-                      <span className="text-gray-600">{item.dueDate}</span>
+                      {/* <span className="text-gray-600">{item.dueDate}</span> */}
                     </div>
                   </div>
                 </div>
@@ -826,7 +825,7 @@ export default function UAEEInvoicingLanding() {
             <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-blue-600 uppercase tracking-wider">
+                  <span className="text-sm font-medium text-red-600 uppercase tracking-wider">
                     Step {activeCompliance + 1}
                   </span>
                   <div className="text-right">
@@ -838,14 +837,14 @@ export default function UAEEInvoicingLanding() {
                 <h3 className="text-3xl font-bold mb-2 text-gray-900">
                   {complianceTimeline[activeCompliance].title}
                 </h3>
-                <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
+                <div className="w-20 h-1 bg-red-500 rounded-full"></div>
               </div>
               
               <div className="space-y-4">
                 {/* Implementation Date Card */}
                 <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
                       <Calendar className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
@@ -858,7 +857,7 @@ export default function UAEEInvoicingLanding() {
                 </div>
                 
                 {/* Criteria Card */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+                {/* <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                       <Clock className="w-5 h-5 text-white" />
@@ -870,12 +869,12 @@ export default function UAEEInvoicingLanding() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Description Card */}
                 <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -917,7 +916,7 @@ export default function UAEEInvoicingLanding() {
   Partnership Services
   </p>
   <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-  Mac & Ross + Taxilla 
+  Mac & Ross  <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla 
     <span className="text-red-600"> E-Invoicing </span>Solutions
   </h2>
 </div>
@@ -1160,25 +1159,36 @@ export default function UAEEInvoicingLanding() {
                 <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Phone</h4>
-                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">+971-50 123 4567</p>
-                  <p className="opacity-90 group-hover:text-white transition-colors duration-300">+971-55 987 6543</p>
+                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
+                    <a href="tel:+97143584999" className="hover:text-yellow-300 transition-colors duration-300">+971 43584999</a>
+                  </p>
+                  <p className="opacity-90 group-hover:text-white transition-colors duration-300">
+                    <a href="tel:+971543522747" className="hover:text-yellow-300 transition-colors duration-300">+971 543522747</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
                 <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Email</h4>
-                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">info@macross.ae</p>
-                  <p className="opacity-90 group-hover:text-white transition-colors duration-300">einvoicing@macross.ae</p>
+                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
+                    <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 transition-colors duration-300">info@mnrdxb.com</a>
+                  </p>
+                  {/* <p className="opacity-90 group-hover:text-white transition-colors duration-300">einvoicing@macross.ae</p> */}
                 </div>
               </div>
-              <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
+              <a 
+                href="https://www.google.com/maps/search/Dubai,+United+Arab+Emirates" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300 cursor-pointer"
+              >
                 <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
                 <div>
                   <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Location</h4>
-                  <p className="opacity-90 group-hover:text-white transition-colors duration-300">Dubai, United Arab Emirates</p>
+                  <p className="opacity-90 group-hover:text-white transition-colors duration-300 group-hover:underline">Dubai, United Arab Emirates</p>
                 </div>
-              </div>
+              </a>
              
             </div>
           
@@ -1301,7 +1311,7 @@ export default function UAEEInvoicingLanding() {
             </div>
             
             <ul className="font-semibold mb-8 leading-10">
-              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">Global Trends</a></li>
+              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">UAE E-Invoicing Background</a></li>
               <li><a href="#setup" className="text-white hover:text-red-600 transition-colors">E-Invoicing Process</a></li>
               <li><a href="#compliance" className="text-white hover:text-red-600 transition-colors">Timeline</a></li>
               <li><a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a></li>
@@ -1327,12 +1337,13 @@ export default function UAEEInvoicingLanding() {
                     <h4 className="text-lg font-semibold mb-2">Phone</h4>
                     <p className="opacity-90 mb-1">
                       <a href="tel:+97143584999" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                        +971 43584999
+                      +971-50 123 4567
                       </a>
                     </p>
                     <p className="opacity-90">
                       <a href="tel:+971543522747" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                        +971 543522747
+                     
++971-55 987 6543
                       </a>
                     </p>
                   </div>
