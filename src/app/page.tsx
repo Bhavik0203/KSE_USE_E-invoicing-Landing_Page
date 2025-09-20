@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search } from 'lucide-react';
+import { FaHandshake } from 'react-icons/fa';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
 import bn from '../../public/model.jpg';
@@ -18,7 +19,6 @@ export default function UAEEInvoicingLanding() {
   const [activeFAQ, setActiveFAQ] = useState(0);
   const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const faqItems = [
@@ -164,52 +164,42 @@ export default function UAEEInvoicingLanding() {
 
   const complianceTimeline = [
     {
-      title: "Phase 1: Large Companies",
-      frequency: "January 2026",
-      dueDate: "Revenue > AED 500M",
-      description: "First wave of implementation targeting largest enterprises in UAE",
-      color: "red"
+      title: "Data Dictionary Release",
+      frequency: "09 Feb, 2025",
+      dueDate: "Public Consultation",
+      description: "Release of Data Dictionary for Public consultation",
+      color: "green"
     },
     {
-      title: "Phase 2: Medium Companies",
-      frequency: "January 2027",
-      dueDate: "Revenue > AED 375M",
-      description: "Second wave expanding to medium-sized businesses across sectors",
-      color: "red"
+      title: "PNT AE Test Bed",
+      frequency: "09 Apr, 2025",
+      dueDate: "Test Environment",
+      description: "PNT AE Test Bed Details made available for testing and integration",
+      color: "green"
     },
     {
-      title: "Phase 3: Small Companies",
-      frequency: "January 2028",
-      dueDate: "Revenue > AED 250M",
-      description: "Third wave including smaller businesses with significant revenue",
-      color: "red"
+      title: "E-Invoice Legislation",
+      frequency: "Q2, 2025",
+      dueDate: "Regulatory Framework",
+      description: "E-invoice legislation (Tentative) - Legal framework establishment",
+      color: "blue"
     },
     {
-      title: "Phase 4: All VAT Registered",
-      frequency: "January 2029",
-      dueDate: "All VAT Entities",
-      description: "Final phase covering all VAT-registered businesses regardless of size",
-      color: "red"
+      title: "Pilot Phase",
+      frequency: "Dec, 2025",
+      dueDate: "Expected Launch",
+      description: "Expected Pilot Phase for selected businesses to test the system",
+      color: "green"
     },
     {
-      title: "Preparation Window",
-      frequency: "Now - 2025",
-      dueDate: "Assessment Period",
-      description: "Critical preparation period for system assessment and ASP selection",
-      color: "red"
+      title: "Phase-1 Go-Live",
+      frequency: "Jul, 2026",
+      dueDate: "E-invoicing & Reporting",
+      description: "Phase-1 go-live for e-invoicing and reporting (Tentative)",
+      color: "blue"
     }
   ];
 
-  // Auto-change compliance timeline every 5 seconds (pauses on hover)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovered) {
-        setActiveCompliance(prev => (prev + 1) % complianceTimeline.length);
-      }
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [complianceTimeline.length, isHovered]);
 
   const services = [
     {
@@ -807,150 +797,100 @@ export default function UAEEInvoicingLanding() {
 
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <div 
-              id="compliance-timeline"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className={`space-y-4 scroll-animate-left ${visibleElements.has('compliance-timeline') ? 'animate' : ''}`}
-            >
+            <div className="space-y-4">
               {complianceTimeline.map((item, index) => (
                 <div 
                   key={index}
-                  id={`timeline-item-${index}`}
-                  ref={(el) => {
-                    if (el && observerRef.current) {
-                      observerRef.current.observe(el);
-                    }
-                  }}
-                  className={`px-6 py-4 rounded-xl cursor-pointer transition-all duration-500 transform hover:scale-105 border-l-4 scroll-animate-scale ${
-                    visibleElements.has(`timeline-item-${index}`) ? 'animate' : ''
-                  } ${
+                  className={`px-6 py-4 rounded-xl cursor-pointer transition-all duration-300 border-l-4 ${
                     activeCompliance === index 
-                      ? `bg-${item.color}-50 border-${item.color}-500 shadow-lg scale-105` 
-                      : 'bg-white hover:shadow-lg border-red-200 border hover:bg-red-50'
+                      ? `bg-${item.color}-50 border-${item.color}-500 shadow-md` 
+                      : 'bg-white hover:shadow-md border-gray-200 border hover:bg-gray-50'
                   }`}
                   onClick={() => setActiveCompliance(index)}
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-red-600 transition-colors duration-300">{item.title}</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
                       <div className="flex items-center space-x-4 text-sm mb-2">
-                        <span className={`px-2 py-1 rounded text-${item.color}-700 bg-${item.color}-100 animate-pulse`}>
+                        <span className={`px-3 py-1 rounded-full text-${item.color}-700 bg-${item.color}-100 font-medium`}>
                           {item.frequency}
                         </span>
-                        
                       </div>
-                      <span className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">{item.dueDate}</span>
+                      <span className="text-gray-600">{item.dueDate}</span>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div 
-              id="compliance-details"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className={`relative overflow-hidden bg-gradient-to-br from-red-50 via-red-100 to-red-50 rounded-3xl p-8 shadow-2xl scroll-animate-right ${visibleElements.has('compliance-details') ? 'animate' : ''} hover:shadow-3xl transition-all duration-500 group`}
-            >
-              {/* Animated background pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-400 to-red-500 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-red-300 to-red-400 rounded-full blur-2xl animate-pulse delay-1000"></div>
-              </div>
-              
-              {/* Header with phase indicator */}
-              <div className="relative z-10 mb-8">
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+              <div className="mb-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    
-                    <span className="text-sm font-medium text-red-700 uppercase tracking-wider">
-                      Phase {activeCompliance + 1}
-                    </span>
-                  </div>
+                  <span className="text-sm font-medium text-blue-600 uppercase tracking-wider">
+                    Step {activeCompliance + 1}
+                  </span>
                   <div className="text-right">
-                    <div className="text-xs text-red-600 uppercase tracking-wider">Implementation</div>
-                    <div className="text-sm font-semibold text-red-800">Timeline</div>
+                    <div className="text-xs text-gray-600 uppercase tracking-wider">Implementation</div>
+                    <div className="text-sm font-semibold text-gray-800">Timeline</div>
                   </div>
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl font-bold mb-2 animate-fade-in-scale bg-gradient-to-r from-gray-900 to-red-800 bg-clip-text text-transparent">
+                <h3 className="text-3xl font-bold mb-2 text-gray-900">
                   {complianceTimeline[activeCompliance].title}
                 </h3>
-                <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
               </div>
               
-              {/* Content cards */}
-              <div className="relative z-10 space-y-6">
+              <div className="space-y-4">
                 {/* Implementation Date Card */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-red-200 hover:bg-white/90 transition-all duration-300 group/card shadow-lg">
+                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover/card:scale-110 transition-transform duration-300">
-                      <Calendar className="w-6 h-6 text-white" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-medium text-red-700 uppercase tracking-wider mb-1">Implementation Date</div>
-                      <div className="text-xl font-bold text-gray-900 group-hover/card:text-red-600 transition-colors duration-300">
+                      <div className="text-sm font-medium text-gray-600 mb-1">Implementation Date</div>
+                      <div className="text-lg font-bold text-gray-900">
                         {complianceTimeline[activeCompliance].frequency}
                       </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-red-600">Deadline</div>
                     </div>
                   </div>
                 </div>
                 
                 {/* Criteria Card */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-red-200 hover:bg-white/90 transition-all duration-300 group/card shadow-lg">
+                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg group-hover/card:scale-110 transition-transform duration-300">
-                      <Clock className="w-6 h-6 text-white" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-medium text-red-700 uppercase tracking-wider mb-1">Eligibility Criteria</div>
-                      <div className="text-xl font-bold text-gray-900 group-hover/card:text-red-600 transition-colors duration-300">
+                      <div className="text-sm font-medium text-gray-600 mb-1">Status</div>
+                      <div className="text-lg font-bold text-gray-900">
                         {complianceTimeline[activeCompliance].dueDate}
                       </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-red-600">Revenue</div>
                     </div>
                   </div>
                 </div>
                 
                 {/* Description Card */}
-                <div className="bg-gradient-to-r from-white/60 to-white/80 backdrop-blur-sm rounded-2xl p-6 border border-red-200 hover:from-white/70 hover:to-white/90 transition-all duration-300 group/card shadow-lg">
+                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-700 to-red-800 rounded-xl flex items-center justify-center shadow-lg group-hover/card:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3 group-hover/card:text-red-600 transition-colors duration-300">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
                         Implementation Details
                       </h4>
-                      <p className="text-gray-700 leading-relaxed text-base group-hover/card:text-gray-800 transition-colors duration-300">
+                      <p className="text-gray-700 leading-relaxed">
                         {complianceTimeline[activeCompliance].description}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
             </div>
           </div>
 
@@ -1022,7 +962,7 @@ export default function UAEEInvoicingLanding() {
      
 
       {/* Partnership Section */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6  bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div 
             id="partnership-header"
@@ -1041,7 +981,7 @@ export default function UAEEInvoicingLanding() {
               <span className="text-red-600"> UAE E-Invoicing </span>Compliance
             </h2>
           </div>
-
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div 
               id="partnership-left"
@@ -1065,7 +1005,9 @@ export default function UAEEInvoicingLanding() {
                 </p>
               </div>
 
-              <div className="bg-red-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+              
+            </div>
+            <div className="bg-red-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Combined Offering</h3>
                 <div className="space-y-4">
                   {[
@@ -1087,70 +1029,52 @@ export default function UAEEInvoicingLanding() {
                   ))}
                 </div>
               </div>
-            </div>
-
-            <div 
+          
+          </div>
+          
+          <div 
               id="partnership-right"
               ref={(el) => {
                 if (el && observerRef.current) {
                   observerRef.current.observe(el);
                 }
               }}
-              className={`text-center space-y-8 scroll-animate-right ${visibleElements.has('partnership-right') ? 'animate' : ''}`}
+              className={`text-center max-w-4xl mt-10 mx-auto flex flex-col justify-center items-center space-y-8 scroll-animate-right ${visibleElements.has('partnership-right') ? 'animate' : ''}`}
             >
               <div className="bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Partnership Logos</h3>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 group">
-                    <div className="flex items-center justify-center space-x-4">
-                      <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
+                    <div className="flex items-center justify-center space-x-6">
+                      <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
                         <Image 
                           src={mrLogo} 
                           alt="Mac & Ross Logo" 
-                          width={48} 
-                          height={48}
+                          width={80} 
+                          height={80}
                           className="object-contain"
                         />
                       </div>
-                      <span className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">+</span>
-                      <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
+                      <FaHandshake className="text-3xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300" />
+                      <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
                         <Image 
                           src={taxLogo} 
                           alt="Taxilla Logo" 
-                          width={48} 
-                          height={48}
+                          width={80} 
+                          height={80}
                           className="object-contain"
                         />
                       </div>
                     </div>
-                    <p className="text-gray-600 mt-4 font-semibold group-hover:text-red-600 transition-colors duration-300">Mac & Ross + Taxilla</p>
+                     <p className="text-gray-600 mt-4 font-semibold group-hover:text-red-600 transition-colors duration-300 flex items-center justify-center gap-2">Mac & Ross <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla</p>
                   </div>
                   
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <h4 className="font-semibold text-gray-900 mb-3">Certifications & Partners</h4>
-                    <div className="grid grid-cols-2 gap-4">
-                      {["UAE Licensed", "FTA Approved", "Peppol Certified", "ISO Compliant"].map((cert, index) => (
-                        <div 
-                          key={index}
-                          className="bg-gray-100 p-3 rounded text-sm font-medium text-gray-700 hover:bg-red-100 hover:text-red-700 transition-all duration-300 hover:scale-105"
-                          style={{ animationDelay: `${index * 0.05}s` }}
-                        >
-                          {cert}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
 
-              <div className="bg-gray-100 p-6 rounded-xl hover:bg-gray-200 transition-colors duration-300">
-                <p className="text-sm text-gray-600 italic">
-                  *We are discussing with Taxilla for use of client logos, once confirmed we can put.
-                </p>
-              </div>
+             
             </div>
-          </div>
-
           <div 
             id="partnership-cta"
             ref={(el) => {
@@ -1401,16 +1325,28 @@ export default function UAEEInvoicingLanding() {
                   <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Phone</h4>
-                    <p className="opacity-90 mb-1">+971-50 123 4567</p>
-                    <p className="opacity-90">+971-55 987 6543</p>
+                    <p className="opacity-90 mb-1">
+                      <a href="tel:+97143584999" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
+                        +971 43584999
+                      </a>
+                    </p>
+                    <p className="opacity-90">
+                      <a href="tel:+971543522747" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
+                        +971 543522747
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 group">
                   <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Email</h4>
-                    <p className="opacity-90 mb-1">info@macross.ae</p>
-                    <p className="opacity-90">einvoicing@macross.ae</p>
+                    <p className="opacity-90 mb-1">
+                      <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
+                        info@mnrdxb.com
+                      </a>
+                    </p>
+                   
                   </div>
                 </div>
                 
@@ -1424,7 +1360,16 @@ export default function UAEEInvoicingLanding() {
                   <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Location</h4>
-                    <p className="opacity-90">Dubai, United Arab Emirates</p>
+                    <p className="opacity-90">
+                      <a 
+                        href="https://maps.google.com/maps?q=Dubai,+United+Arab+Emirates" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-yellow-300 cursor-pointer transition-colors duration-200"
+                      >
+                        Dubai, United Arab Emirates
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
