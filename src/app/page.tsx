@@ -23,24 +23,24 @@ export default function UAEEInvoicingLanding() {
 
   const faqItems = [
     {
-      question: "What is UAE E-Invoicing?",
-      answer: "UAE E-Invoicing is a digital platform that helps businesses comply with the Federal Tax Authority's mandatory electronic invoicing requirements. It enables businesses to create, send, and receive invoices electronically while ensuring full compliance with UAE tax regulations."
+      question: "What is the procedure to deliver the tax invoice to the customer?",
+      answer: "Businesses in the UAE must engage with an Accredited Service Provider to issue and receive eInvoices. The buyer’s electronic address (endpoint) will be used to share the invoice over the Peppol network."
     },
     {
-      question: "Are the invoices generated through the system FTA compliant?",
-      answer: "Yes, all invoices generated through our system are fully compliant with FTA requirements. Our platform is designed to meet all technical and regulatory standards set by the Federal Tax Authority for electronic invoicing in the UAE."
+      question: "Will it be required that every legal entity within a VAT tax group must integrate with an Accredited Service Provider separately or all the entities that are part of VAT tax group will have a single integration through the representative member?",
+      answer: "Each member of the VAT group must have an endpoint via a UAE Accredited Service Provider."
     },
     {
-      question: "Can I integrate the system with my existing accounting software?",
-      answer: "Absolutely! Our E-Invoicing solution offers seamless integration with most popular accounting software including QuickBooks, Xero, SAP, and many others. We provide API integration and pre-built connectors for easy setup."
+      question: "Who will create and exchange the eInvoice in case of Self-billing?",
+      answer: "In case of self-billing the buyer (customer) should create the eInvoice and will exchange the document with the seller and will also report to the FTA via the Accredited Service Provider"
     },
     {
-      question: "How do I get started with UAE E-Invoicing compliance?",
-      answer: "Getting started is simple. Contact our team to schedule a consultation, and we'll help you register with an Accredited Service Provider, set up your system, and ensure your business is fully compliant with UAE E-Invoicing regulations."
+      question: "Does business to business (B2B) include also businesses not VAT registered?",
+      answer: "The eInvoicing framework encompasses all business-to-business (B2B) and business-to-government (B2G) transactions, regardless of the VAT registration status of the entities involved."
     },
     {
-      question: "What support do you provide for E-Invoicing implementation?",
-      answer: "We provide comprehensive support including system setup, staff training, ongoing technical support, and compliance monitoring. Our team ensures your business stays compliant with all FTA requirements throughout the implementation process."
+      question: "What are the allowed modes of error correction on tax invoices under the eInvoicing system?",
+      answer: "In case of any errors in tax invoices, a credit note is required to be issued for its rectification."
     }
   ];
 
@@ -351,13 +351,15 @@ export default function UAEEInvoicingLanding() {
                   <span className={`text-red-600 block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     Your Countdown
                   </span>
-                  <span className={`text-2xl text-white font-normal transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    to Compliance Has Begun
+                
+                  <span className={`text-white block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  to Compliance Has Begun
                   </span>
+                
                 </h1>
                 <p className={`text-xl text-white mb-8 leading-relaxed transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  Time is ticking for E-invoicing implementation in the UAE. Don't wait - start your assessment process now with Mac & Ross and Taxilla's proven expertise.
-                </p>
+                We can show as timelines and mention that time is ticking for E-invoicing to urge businesses to initiate the assessment process.
+                   </p>
                 <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <a href="#contact" className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center animate-glow hover:animate-none group">
                     <span className="group-hover:animate-bounce">Start Your E-Invoicing Assessment</span>
@@ -400,12 +402,12 @@ export default function UAEEInvoicingLanding() {
             }}
             className={`md:w-full text-center mb-12 scroll-animate ${visibleElements.has('definition-header') ? 'animate' : ''}`}
           >
-            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-              UNDERSTANDING E-INVOICING
-            </p>
+            {/* <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              
+            </p> */}
             <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-              What is E-Invoicing
-              <span className="text-red-600"> in UAE</span>
+            UNDERSTANDING <span className="text-red-600">E-INVOICING</span>
+              {/* <span className="text-red-600"> in UAE</span> */}
             </h2>
           </div>
 
@@ -421,11 +423,9 @@ export default function UAEEInvoicingLanding() {
               >
               
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoicing IS</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-invoicing in UAE ?</h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, 
-                  integrated electronic format. E-invoicing involves the electronic generation, transmission, and receipt 
-                  of invoices, replacing traditional paper-based methods.
+                E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format. E-invoicing involves the electronic generation, transmission, and receipt of invoices, replacing traditional paper-based methods. 
                 </p>
               </div>
 
@@ -443,7 +443,7 @@ export default function UAEEInvoicingLanding() {
             >
 
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices are NOT</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices Are NOT ?</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   E-Invoices are not simply digital versions of paper invoices which can be:
                 </p>
@@ -470,7 +470,15 @@ export default function UAEEInvoicingLanding() {
           
             
           </div>
-
+       
+        </div>
+      </section>
+      <div className='py-16 flex flex-col justify-center items-center bg-red-50'>
+          <h2 className="text-4xl md:text-[47px] mb-12 font-bold leading-tight justify-center items-center text-gray-900">
+            UAE 
+            <span className="text-red-600"> E-INVOICING </span>
+            (5 corner model)
+            </h2>
              <div className='flex justify-center items-center px-4'>
               <Image 
                 src={bn} 
@@ -480,8 +488,7 @@ export default function UAEEInvoicingLanding() {
                 className='w-full max-w-4xl h-auto object-contain'
               />
             </div>
-        </div>
-      </section>
+          </div>
        {/* FAQ Section */}
        <section id="faq" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -555,7 +562,7 @@ export default function UAEEInvoicingLanding() {
       {/* <section id="about">
     <DeliveryMethodsSection/>
     </section> */}
-            <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
+            {/* <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
         <div className="container max-w-6xl mx-auto">
          <div 
            id="setup-header"
@@ -604,30 +611,12 @@ export default function UAEEInvoicingLanding() {
             ))}
           </div>
 
-          {/* <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Post Registration</h4>
-                <p className="text-gray-600">Bank account opening, GM appointment, and resident visa processing</p>
-              </div>
-              <div className="text-center">
-                <Users className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Gov Portal Management</h4>
-                <p className="text-gray-600">Complete setup and management of all Saudi government portal accounts</p>
-              </div>
-              <div className="text-center">
-                <Shield className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Ongoing Support</h4>
-                <p className="text-gray-600">Continuous compliance management and regulatory updates</p>
-              </div>
-            </div>
-          </div> */}
+         
         </div>
-      </section>
+      </section> */}
 
-      {/* all view */}
-      <div 
+     
+      {/* <div 
         id="trends-desktop"
         ref={(el) => {
           if (el && observerRef.current) {
@@ -693,7 +682,7 @@ export default function UAEEInvoicingLanding() {
       </div>
           </div>
     </div>
-     {/* mobile view */}
+    
      <div 
        id="trends-mobile"
        ref={(el) => {
@@ -723,7 +712,7 @@ export default function UAEEInvoicingLanding() {
       </h2>
     </div>
 
-    {/* Accordion layout for mobile */}
+    
     <div 
       id="trends-mobile-accordion"
       ref={(el) => {
@@ -768,7 +757,142 @@ export default function UAEEInvoicingLanding() {
       ))}
     </div>
   </div>
-</div>
+</div> */}
+      {/* UAE eInvoicing Framework Section */}
+      <section className="py-16 px-6 bg-gray-900 text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div 
+            id="framework-header"
+            ref={(el) => {
+              if (el && observerRef.current) {
+                observerRef.current.observe(el);
+              }
+            }}
+            className={`text-center mb-12 scroll-animate ${visibleElements.has('framework-header') ? 'animate' : ''}`}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              The UAE <span className="text-red-600"> E-Invoicing </span> Framework
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {/* Box 1: DCTCE / 5 corner model */}
+            <div 
+              id="framework-box-1"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-1') ? 'animate' : ''}`}
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed">
+                  UAE has selected the Decentralized Continuous Transaction Control and Exchange (DCTCE) / 5 corner model
+                </p>
+              </div>
+            </div>
+
+            {/* Box 2: Peppol network */}
+            <div 
+              id="framework-box-2"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-2') ? 'animate' : ''}`}
+              style={{ animationDelay: '0.2s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed">
+                  Usage of Peppol network to leverage for invoice exchange and interoperability
+                </p>
+              </div>
+            </div>
+
+            {/* Box 3: PINT as Data Dictionary */}
+            <div 
+              id="framework-box-3"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-3') ? 'animate' : ''}`}
+              style={{ animationDelay: '0.3s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed">
+                  Peppol International (PINT) as UAE Data Dictionary
+                </p>
+              </div>
+            </div>
+
+            {/* Box 4: B2B and B2G mandatory */}
+            <div 
+              id="framework-box-4"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-4') ? 'animate' : ''}`}
+              style={{ animationDelay: '0.4s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed">
+                  B2B and B2G mandatory
+                </p>
+              </div>
+            </div>
+
+            {/* Box 5: UAE Peppol Authority Committee */}
+            <div 
+              id="framework-box-5"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-5') ? 'animate' : ''}`}
+              style={{ animationDelay: '0.5s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <p className="text-sm leading-relaxed">
+                  Set up of the UAE Peppol Authority Committee
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       
 
@@ -900,63 +1024,7 @@ export default function UAEEInvoicingLanding() {
       </section>
    
       {/* Services */}
-      <section id="services" className="py-16 px-6 bg-gray-900">
-        <div className="container max-w-6xl mx-auto">
-          
-          <div 
-            id="services-header"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`md:w-full text-center mb-6 scroll-animate ${visibleElements.has('services-header') ? 'animate' : ''}`}
-          >
-  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-  Partnership Services
-  </p>
-  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-  Mac & Ross  <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla 
-    <span className="text-red-600"> E-Invoicing </span>Solutions
-  </h2>
-</div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                id={`service-${index}`}
-                ref={(el) => {
-                  if (el && observerRef.current) {
-                    observerRef.current.observe(el);
-                  }
-                }}
-                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group border border-gray-100 scroll-animate-scale ${
-                  visibleElements.has(`service-${index}`) ? 'animate' : ''
-                } hover:scale-105 hover:ring-2 hover:ring-red-400`}
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-red-200 group-hover:to-red-300">
-                    <service.icon className="w-10 h-10 text-red-600 group-hover:animate-bounce" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-red-600 transition-colors duration-300">{service.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
-                </div>
-                
-               
-                
-                {/* <div className="mt-6 pt-4 border-t border-gray-100">
-                  <button className="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div> */}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
      
 
@@ -1040,7 +1108,7 @@ export default function UAEEInvoicingLanding() {
               }}
               className={`text-center max-w-4xl mt-10 mx-auto flex flex-col justify-center items-center space-y-8 scroll-animate-right ${visibleElements.has('partnership-right') ? 'animate' : ''}`}
             >
-              <div className="bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-to-br from-red-100 to-red-200 max-w-4xl p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Partnership Logos</h3>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 group">
@@ -1049,8 +1117,8 @@ export default function UAEEInvoicingLanding() {
                         <Image 
                           src={mrLogo} 
                           alt="Mac & Ross Logo" 
-                          width={80} 
-                          height={80}
+                          width={120} 
+                          height={120}
                           className="object-contain"
                         />
                       </div>
@@ -1059,8 +1127,8 @@ export default function UAEEInvoicingLanding() {
                         <Image 
                           src={taxLogo} 
                           alt="Taxilla Logo" 
-                          width={80} 
-                          height={80}
+                          width={120} 
+                          height={120}
                           className="object-contain"
                         />
                       </div>
@@ -1074,7 +1142,7 @@ export default function UAEEInvoicingLanding() {
 
              
             </div>
-          <div 
+          {/* <div 
             id="partnership-cta"
             ref={(el) => {
               if (el && observerRef.current) {
@@ -1089,10 +1157,67 @@ export default function UAEEInvoicingLanding() {
             <p className="text-lg text-gray-700">
               Ensure a smooth and successful transition to e-invoicing.
             </p>
+          </div> */}
+        </div>
+      </section>
+      <section id="services" className="py-16 px-6 bg-gray-900">
+        <div className="container max-w-6xl mx-auto">
+          
+          <div 
+            id="services-header"
+            ref={(el) => {
+              if (el && observerRef.current) {
+                observerRef.current.observe(el);
+              }
+            }}
+            className={`md:w-full text-center mb-6 scroll-animate ${visibleElements.has('services-header') ? 'animate' : ''}`}
+          >
+  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+  Partnership Services
+  </p>
+  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
+  Mac & Ross  <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla 
+    <span className="text-red-600"> E-Invoicing </span>Solutions
+  </h2>
+</div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                id={`service-${index}`}
+                ref={(el) => {
+                  if (el && observerRef.current) {
+                    observerRef.current.observe(el);
+                  }
+                }}
+                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group border border-gray-100 scroll-animate-scale ${
+                  visibleElements.has(`service-${index}`) ? 'animate' : ''
+                } hover:scale-105 hover:ring-2 hover:ring-red-400`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-red-200 group-hover:to-red-300">
+                    <service.icon className="w-10 h-10 text-red-600 group-hover:animate-bounce" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-red-600 transition-colors duration-300">{service.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
+                </div>
+                
+               
+                
+                {/* <div className="mt-6 pt-4 border-t border-gray-100">
+                  <button className="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div> */}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
+      
       {/* Contact Section */}
    <section 
      id="contact"
