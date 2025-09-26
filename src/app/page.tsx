@@ -552,9 +552,9 @@ export default function UAEEInvoicingLanding() {
       </section>
 
       {/* KSA Overview */}
-      <section id="about">
+      {/* <section id="about">
     <DeliveryMethodsSection/>
-    </section>
+    </section> */}
             <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
         <div className="container max-w-6xl mx-auto">
          <div 
