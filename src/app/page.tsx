@@ -10,7 +10,8 @@ import bn from '../../public/model.jpg';
 import banner2 from '../../public/1.png';
 import mrLogo from '../../public/Picture1.png';
 import taxLogo from '../../public/Picture2.png';
-import UAEInvoiceModel from './components/invoicemodel';
+import SaudiAdvantagesSection from './components/about';
+
 export default function UAEEInvoicingLanding() {
   const [activeService, setActiveService] = useState(0);
   const [scrolled, setScrolled] = useState(false);
@@ -473,6 +474,7 @@ export default function UAEEInvoicingLanding() {
        
         </div>
       </section>
+     
       <div className='py-16 flex flex-col justify-center items-center bg-red-50'>
           <h2 className="text-4xl md:text-[47px] mb-12 font-bold leading-tight justify-center items-center text-gray-900">
             UAE 
