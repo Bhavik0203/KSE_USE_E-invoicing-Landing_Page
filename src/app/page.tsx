@@ -6,6 +6,7 @@ import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCi
 import { FaHandshake } from 'react-icons/fa';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
+import aboutCredit1 from '../../public/1.png';
 import bn from '../../public/model.jpg';
 import banner2 from '../../public/1.png';
 import mrLogo from '../../public/Picture1.png';
@@ -21,27 +22,48 @@ export default function UAEEInvoicingLanding() {
   const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
   const [isLoaded, setIsLoaded] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  const stats = [
+    { value: 25, label: "Countries Experience" },
+    { value: 1000, label: "Businesses Served" },
+    { value: 10, label: "Years Expertise" },
+    { value: 99, label: "Compliance Rate %" }
+  ];
 
   const faqItems = [
     {
-      question: "What is the procedure to deliver the tax invoice to the customer?",
-      answer: "Businesses in the UAE must engage with an Accredited Service Provider to issue and receive eInvoices. The buyer’s electronic address (endpoint) will be used to share the invoice over the Peppol network."
+      question: "How exchange of invoices will happen?",
+      answer: "Businesses in the UAE must engage with an Accredited Service Provider to issue and receive eInvoices. The buyer's electronic address (endpoint) will be used to share the invoice over the Peppol network."
     },
     {
-      question: "Will it be required that every legal entity within a VAT tax group must integrate with an Accredited Service Provider separately or all the entities that are part of VAT tax group will have a single integration through the representative member?",
+      question: "In case of tax group, each entity should be integrated with ASP or single integration with main entity (representative entity) should be integrated with ASP?",
       answer: "Each member of the VAT group must have an endpoint via a UAE Accredited Service Provider."
     },
     {
-      question: "Who will create and exchange the eInvoice in case of Self-billing?",
-      answer: "In case of self-billing the buyer (customer) should create the eInvoice and will exchange the document with the seller and will also report to the FTA via the Accredited Service Provider"
+      question: "How invoices will be generated for export of goods/services?",
+      answer: "For export transactions, if your foreign buyer is registered on the Peppol network, you'll need to provide their electronic address (endpoint). If the buyer is not registered, a dummy endpoint will be used. In this case, the invoice will not be exchanged through Peppol, but your service provider will still report it to the FTA. You can then send the invoice to the buyer directly (for example, by email). The foreign buyer doesn't need to register with a UAE e-invoicing service provider unless required under UAE VAT or Corporate Tax laws."
     },
     {
-      question: "Does business to business (B2B) include also businesses not VAT registered?",
-      answer: "The eInvoicing framework encompasses all business-to-business (B2B) and business-to-government (B2G) transactions, regardless of the VAT registration status of the entities involved."
-    },
-    {
-      question: "What are the allowed modes of error correction on tax invoices under the eInvoicing system?",
+      question: "In case of error on original invoice, what is method of correction?",
       answer: "In case of any errors in tax invoices, a credit note is required to be issued for its rectification."
+    },
+    {
+      question: "How should retail business should handle e-invoicing?",
+      answer: "B2C transactions are not currently within the scope of UAE eInvoicing."
+    },
+    {
+      question: "Will there be any QR code to be printed on E-invoice?",
+      answer: "There is no requirement for QR codes to be printed on the eInvoices."
+    },
+    {
+      question: "Is self-billing applicable to UAE-based customers for import of goods/services?",
+      answer: "The MoF cannot impose its standards on foreign vendors, so these invoices will not be required to be sent through the UAE eInvoicing network, and there will be no additional obligation on taxpayers to report these transactions."
+    },
+    {
+      question: "Business entity can use different ASP for sales and purchase or there should be one ASP only?",
+      answer: "Each business entity must use the same Accredited Service Provider (ASP) for both sending (accounts receivable) and receiving (accounts payable) eInvoices."
     }
   ];
 
@@ -113,6 +135,24 @@ export default function UAEEInvoicingLanding() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Stats animation observer
+  useEffect(() => {
+    if (statsRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setShouldAnimate(true);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(statsRef.current);
+      return () => observer.disconnect();
+    }
+  }, []);
+
   const timelinePhases = [
     "Phase 1: Large Companies (Revenue > AED 500M) - January 2026",
     "Phase 2: Medium Companies (Revenue > AED 375M) - January 2027",
@@ -164,38 +204,39 @@ export default function UAEEInvoicingLanding() {
 
   const complianceTimeline = [
     {
-      title: "Data Dictionary Release",
-      frequency: "09 Feb, 2025",
-      dueDate: "Public Consultation",
-      description: "Release of Data Dictionary for Public consultation ",
+      title: "Pilot",
+      frequency: "1 July 2026",
+      revenueCriteria: "Selected group of businesses",
+      aspAppointmentDate: "N/A",
+      effectiveDate: "1 July 2026",
+      description: "Pilot phase for selected group of businesses to test the e-invoicing system before full implementation.",
       color: "red"
     },
     {
-      title: "PINT AE Test Bed",
-      frequency: "09 Apr, 2025",
-      dueDate: "Test Environment",
-      description: "PNT AE Test Bed Details made available for testing and integration",
+      title: "Phase 1",
+      frequency: "1 January 2027",
+      revenueCriteria: "> AED 50 million",
+      aspAppointmentDate: "31 July 2026",
+      effectiveDate: "1 January 2027",
+      description: "Phase 1 implementation for businesses with turnover greater than AED 50 million. ASP appointment must be completed by 31 July 2026.",
       color: "red"
     },
     {
-      title: "E-Invoice Legislation",
-      frequency: "Q2, 2025",
-      dueDate: "Regulatory Framework",
-      description: "E-invoice legislation (Tentative) - Legal framework establishment",
+      title: "Phase 2",
+      frequency: "1 July 2027",
+      revenueCriteria: "< AED 50 million",
+      aspAppointmentDate: "31 March 2027",
+      effectiveDate: "1 July 2027",
+      description: "Phase 2 implementation for businesses with turnover less than AED 50 million. ASP appointment must be completed by 31 March 2027.",
       color: "red"
     },
     {
-      title: "Pilot Phase",
-      frequency: "Dec, 2025",
-      dueDate: "Expected Launch",
-      description: "Expected Pilot Phase for selected businesses to test the system",
-      color: "red"
-    },
-    {
-      title: "Phase-1 Go-Live",
-      frequency: "Jul, 2026",
-      dueDate: "E-invoicing & Reporting",
-      description: "Phase-1 go-live for e-invoicing and reporting (Tentative)",
+      title: "Phase 3 – Government Entities",
+      frequency: "1 October 2027",
+      revenueCriteria: "N/A",
+      aspAppointmentDate: "31 March 2027",
+      effectiveDate: "1 October 2027",
+      description: "Phase 3 implementation for government entities. ASP appointment must be completed by 31 March 2027.",
       color: "red"
     }
   ];
@@ -295,8 +336,9 @@ export default function UAEEInvoicingLanding() {
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="text-white hover:text-red-600 transition-colors">Global Trends</a>
-            <a href="#setup" className="text-white hover:text-red-600 transition-colors">E-Invoicing Process</a>
+            <a href="#overview" className="text-white hover:text-red-600 transition-colors">Overview</a>
+            <a href="#definition" className="text-white hover:text-red-600 transition-colors">Introduction</a>
+            {/* <a href="#framework" className="text-white hover:text-red-600 transition-colors">Framework</a> */}
             <a href="#compliance" className="text-white hover:text-red-600 transition-colors">Timeline</a>
             <a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a>
             <a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a>
@@ -325,8 +367,9 @@ export default function UAEEInvoicingLanding() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <a href="#about" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Global Trends</a>
-            <a href="#setup" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>E-Invoicing Process</a>
+            <a href="#overview" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Overview</a>
+            <a href="#definition" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Introduction</a>
+            <a href="#framework" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Framework</a>
             <a href="#compliance" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Timeline</a>
             <a href="#services" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#faq" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
@@ -347,14 +390,14 @@ export default function UAEEInvoicingLanding() {
               <div className={`hero-content ${isLoaded ? 'loaded' : 'loading'}`}>
                 <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
                   <span className={`inline-block transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    UAE E-Invoicing:
+                  Digital Tax Transformation: 
                   </span>
                   <span className={`text-red-600 block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    Your Countdown
+                  Preparing for 
                   </span>
                 
                   <span className={`text-white block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  to Compliance Has Begun
+                  UAE E-Invoicing
                   </span>
                 
                 </h1>
@@ -363,7 +406,7 @@ export default function UAEEInvoicingLanding() {
                    </p>
                 <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <a href="#contact" className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center animate-glow hover:animate-none group">
-                    <span className="group-hover:animate-bounce">Start Your E-Invoicing Assessment</span>
+                    <span className="group-hover:animate-bounce"> Start Your E-Invoicing Assessment</span>
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                   
@@ -390,6 +433,79 @@ export default function UAEEInvoicingLanding() {
           </div>
         </div>
       </section>
+      <section id="overview" className="relative w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+              {/* Left Side - Image */}
+              <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
+                <div className="block w-full h-full">
+                  <Image
+                    src={aboutCredit1}
+                    alt="UAE E-Invoicing Partnership"
+                    fill
+                    className="object-cover rounded-lg"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - White Overlay Box */}
+              <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
+                {/* Main Headline */}
+                <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
+                  Overview - UAE E-Invoicing
+                </h2>
+                
+                {/* Bullet Points */}
+                <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4">
+                  <li>
+                    The Federal Tax Authority (FTA) has outlined a strategic, phased roadmap for implementation, marking a major milestone in the UAE's digital tax transformation and alignment with global best practices.
+                  </li>
+                  <li>
+                    The UAE has adopted the 5-Corner Model and will utilize the Peppol network, a globally recognized platform used by multiple countries to enable secure and standardized e-invoicing.
+                  </li>
+                  <li>
+                    Ministerial Decisions No. 243 and 244 of 2025 detail the effective dates, phased rollout timelines, and operational requirements for e-invoicing adoption.
+                  </li>
+                </ul>
+                
+                {/* Concluding Paragraph */}
+                <p className="text-[#666666] leading-relaxed text-sm sm:text-base">
+                  To help you better understand the impact E-invoicing in the UAE, we've highlighted below why E-Invoicing matters to your business and the key factors and timelines for which you should prepare for.
+                </p>
+               
+              </div>
+            </div>
+
+            {/* Statistics Section - Below the white box */}
+            {/* <div className="w-full flex justify-center mt-6 sm:mt-8 lg:mt-16 px-4">
+              <div 
+                ref={statsRef}
+                className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl"
+              >
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center px-2 sm:px-0">
+                    <div className="text-[#1A1A1A] font-bold text-2xl sm:text-4xl lg:text-6xl mb-1 sm:mb-2">
+                      {shouldAnimate ? (
+                        stat.value >= 1000 ? (
+                          <span>{stat.value.toLocaleString()} +</span>
+                        ) : (
+                          <span>{stat.value} +</span>
+                        )
+                      ) : (
+                        "0 +"
+                      )}
+                    </div>
+                    <div className="text-[#666666] text-xs sm:text-sm lg:text-base leading-tight sm:leading-normal">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+          </div>
+        </section>
+     
+
 
       {/* E-Invoicing Definition Section */}
       <section id="definition" className="py-16 px-6 bg-white">
@@ -407,8 +523,7 @@ export default function UAEEInvoicingLanding() {
               
             </p> */}
             <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-            UNDERSTANDING <span className="text-red-600">E-INVOICING</span>
-              {/* <span className="text-red-600"> in UAE</span> */}
+            Introduction of <span className="text-red-600">UAE E-Invoicing</span>
             </h2>
           </div>
 
@@ -424,9 +539,12 @@ export default function UAEEInvoicingLanding() {
               >
               
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-invoicing in UAE ?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-Invoicing?</h3>
+                <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                  E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format.
+                </p>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format. E-invoicing involves the electronic generation, transmission, and receipt of invoices, replacing traditional paper-based methods. 
+                  E-invoicing involves the electronic generation, transmission, and receipt of invoices, replacing traditional paper-based methods.
                 </p>
               </div>
 
@@ -444,9 +562,9 @@ export default function UAEEInvoicingLanding() {
             >
 
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices Are NOT ?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices Are NOT:</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  E-Invoices are not simply digital versions of paper invoices which can be:
+                  E- Invoices are not simply digital versions of paper invoices which can be :
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2 hover:translate-x-2 transition-transform duration-300">
@@ -474,8 +592,93 @@ export default function UAEEInvoicingLanding() {
        
         </div>
       </section>
+      {/* <section className="relative w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+      
+    
+      <div
+        className="relative w-full lg:w-[70%] 
+                   lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 
+                   z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl 
+                   mt-4 lg:mt-0 rounded-lg
+                   order-2 lg:order-1"
+      >
+        <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-2 sm:mb-3 leading-tight">
+          Scope of Application
+        </h2>
+        <p className="text-[#1A1A1A] italic text-sm sm:text-base mb-6 sm:mb-8">
+          Ministerial Decision No. 243 and 244 of 2025
+        </p>
+
+       
+        <div className="mb-6 sm:mb-8">
+          <h3 className="text-[#1A1A1A] font-bold text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-5 flex items-center gap-3">
+            <span>👥</span>
+            <span>Applies To</span>
+          </h3>
+          <ul className="text-[#666666] leading-relaxed text-sm sm:text-base space-y-3 sm:space-y-4 ml-6 sm:ml-8">
+            <li className="list-disc">
+              All persons conducting business in the UAE (except exclusions)
+            </li>
+            <li className="list-disc">
+              Other persons or transactions as determined by the Minister
+            </li>
+          </ul>
+        </div>
+
+      
+        <div>
+          <h3 className="text-[#1A1A1A] font-bold text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-5 flex items-center gap-3">
+            <span>🚫</span>
+            <span>Exclusions</span>
+          </h3>
+          <ul className="text-[#666666] leading-relaxed text-sm sm:text-base space-y-3 sm:space-y-4 ml-6 sm:ml-8">
+            <li className="list-disc">
+              Government activities in sovereign capacity (non-competitive)
+            </li>
+            <li className="list-disc">
+              International passenger transport by airlines
+            </li>
+            <li className="list-disc">
+              International goods transport by airlines (24-month exclusion)
+            </li>
+            <li className="list-disc">
+              Exempt and zero-rated financial services
+            </li>
+            <li className="list-disc">
+              B2C transactions (may be considered later)
+            </li>
+            <li className="list-disc">
+              Other exclusions as notified by the Minister
+            </li>
+          </ul>
+        </div>
+      </div>
+
      
-      <div className='py-16 flex flex-col justify-center items-center bg-red-50'>
+      <div
+        className="relative w-full lg:w-[50%] 
+                   h-[300px] sm:h-[400px] lg:h-[550px] 
+                   flex-shrink-0 
+                   order-1 lg:order-2 lg:ml-auto"
+      >
+        <div className="block w-full h-full relative">
+          <Image
+            src={aboutCredit1}
+            alt="UAE E-Invoicing Partnership"
+            fill
+            className="object-cover rounded-lg"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section> */}
+     
+      <div id="model" className='py-16 flex flex-col justify-center items-center bg-red-50'>
           <h2 className="text-4xl md:text-[47px] mb-12 font-bold leading-tight justify-center items-center text-gray-900">
             UAE 
             <span className="text-red-600"> E-INVOICING </span>
@@ -761,7 +964,7 @@ export default function UAEEInvoicingLanding() {
   </div>
 </div> */}
       {/* UAE eInvoicing Framework Section */}
-      <section className="py-16 px-6 bg-gray-900 text-white">
+      <section id="framework" className="py-16 px-6 bg-gray-900 text-white">
         <div className="container mx-auto max-w-6xl">
           <div 
             id="framework-header"
@@ -938,14 +1141,24 @@ export default function UAEEInvoicingLanding() {
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
                       <div className="flex items-center space-x-4 text-sm mb-1">
                         <span className={`px-3 py-1 rounded-full text-${item.color}-700 bg-${item.color}-100 font-medium`}>
-                          {item.frequency}
+                          {item.effectiveDate}
                         </span>
                       </div>
-                      {/* <span className="text-gray-600">{item.dueDate}</span> */}
+                      <span className="text-gray-600 text-sm">{item.revenueCriteria}</span>
                     </div>
                   </div>
                 </div>
               ))}
+              
+              {/* Note Section */}
+              <div className="mt-6 bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <div className="flex items-start">
+                  <span className="text-sm font-semibold text-blue-900 mr-2">Note:</span>
+                  <p className="text-sm text-blue-800">
+                    Revenue refers to gross income earned during the most recent accounting period
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
@@ -967,35 +1180,50 @@ export default function UAEEInvoicingLanding() {
               </div>
               
               <div className="space-y-4">
-                {/* Implementation Date Card */}
+                {/* Effective Date Card */}
                 <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
                       <Calendar className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-600 mb-1">Implementation Date</div>
+                      <div className="text-sm font-medium text-gray-600 mb-1">Effective Date</div>
                       <div className="text-lg font-bold text-gray-900">
-                        {complianceTimeline[activeCompliance].frequency}
+                        {complianceTimeline[activeCompliance].effectiveDate}
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                {/* Criteria Card */}
-                {/* <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+                {/* Revenue Criteria Card */}
+                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-white" />
+                      <BarChart3 className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-600 mb-1">Status</div>
+                      <div className="text-sm font-medium text-gray-600 mb-1">Revenue Criteria (Turnover)</div>
                       <div className="text-lg font-bold text-gray-900">
-                        {complianceTimeline[activeCompliance].dueDate}
+                        {complianceTimeline[activeCompliance].revenueCriteria}
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div>
+                
+                {/* ASP Appointment Date Card */}
+                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-medium text-gray-600 mb-1">ASP Appointment Date</div>
+                      <div className="text-lg font-bold text-gray-900">
+                        {complianceTimeline[activeCompliance].aspAppointmentDate}
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* Description Card */}
                 <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
@@ -1031,7 +1259,7 @@ export default function UAEEInvoicingLanding() {
      
 
       {/* Partnership Section */}
-      <section className="py-16 px-6  bg-gray-50">
+      <section id="partnership" className="py-16 px-6  bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div 
             id="partnership-header"
@@ -1438,8 +1666,9 @@ export default function UAEEInvoicingLanding() {
             </div>
             
             <ul className="font-semibold mb-8 leading-10">
-              <li><a href="#about" className="text-white hover:text-red-600 transition-colors">UAE E-Invoicing Background</a></li>
-              <li><a href="#setup" className="text-white hover:text-red-600 transition-colors">E-Invoicing Process</a></li>
+              <li><a href="#overview" className="text-white hover:text-red-600 transition-colors">Overview</a></li>
+              <li><a href="#definition" className="text-white hover:text-red-600 transition-colors">Introduction</a></li>
+              <li><a href="#framework" className="text-white hover:text-red-600 transition-colors">Framework</a></li>
               <li><a href="#compliance" className="text-white hover:text-red-600 transition-colors">Timeline</a></li>
               <li><a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a></li>
               <li><a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a></li>
