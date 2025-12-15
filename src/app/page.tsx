@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search } from 'lucide-react';
+import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search, AlertTriangle } from 'lucide-react';
 import { FaHandshake } from 'react-icons/fa';
 import DeliveryMethodsSection from './components/about';
 import banner1 from '../../public/banner1.jpg';
@@ -12,6 +12,7 @@ import banner2 from '../../public/1.png';
 import mrLogo from '../../public/Picture1.png';
 import taxLogo from '../../public/Picture2.png';
 import SaudiAdvantagesSection from './components/about';
+import ClientLogoSection from './components/clintlogo';
 
 export default function UAEEInvoicingLanding() {
   const [activeService, setActiveService] = useState(0);
@@ -369,7 +370,7 @@ export default function UAEEInvoicingLanding() {
             </button>
             <a href="#overview" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Overview</a>
             <a href="#definition" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Introduction</a>
-            <a href="#framework" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Framework</a>
+            {/* <a href="#framework" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Framework</a> */}
             <a href="#compliance" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Timeline</a>
             <a href="#services" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#faq" className="text-white text-2xl font-semibold hover:text-red-600 transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
@@ -695,73 +696,7 @@ export default function UAEEInvoicingLanding() {
             </div>
           </div>
        {/* FAQ Section */}
-       <section id="faq" className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div 
-            id="faq-header"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`text-center mb-12 scroll-animate ${visibleElements.has('faq-header') ? 'animate' : ''}`}
-          >
-            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-              FREQUENTLY ASKED QUESTIONS
-            </p>
-            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-              UAE E-Invoicing
-              <span className="text-red-600"> FAQ </span>
-            </h2>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="space-y-4">
-              {faqItems.map((item, index) => (
-                <div 
-                  key={index}
-                  id={`faq-item-${index}`}
-                  ref={(el) => {
-                    if (el && observerRef.current) {
-                      observerRef.current.observe(el);
-                    }
-                  }}
-                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${
-                    visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
-                  } hover:shadow-lg transition-all duration-300 hover:scale-105`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div 
-                    className="px-6 py-4 cursor-pointer transition-all duration-300 hover:bg-gray-200 group"
-                    onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
-                  >
-                    <div className="flex justify-between items-center">
-                      <h4 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-red-600 transition-colors duration-300">{item.question}</h4>
-                      <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
-                        <ChevronRight 
-                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${
-                            activeFAQ === index ? 'rotate-90' : ''
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div 
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* KSA Overview */}
       {/* <section id="about">
@@ -963,141 +898,7 @@ export default function UAEEInvoicingLanding() {
     </div>
   </div>
 </div> */}
-      {/* UAE eInvoicing Framework Section */}
-      <section id="framework" className="py-16 px-6 bg-gray-900 text-white">
-        <div className="container mx-auto max-w-6xl">
-          <div 
-            id="framework-header"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`text-center mb-12 scroll-animate ${visibleElements.has('framework-header') ? 'animate' : ''}`}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              The UAE <span className="text-red-600"> E-Invoicing </span> Framework
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {/* Box 1: DCTCE / 5 corner model */}
-            <div 
-              id="framework-box-1"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-1') ? 'animate' : ''}`}
-              style={{ animationDelay: '0.1s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  UAE has selected the Decentralized Continuous Transaction Control and Exchange (DCTCE) / 5 corner model
-                </p>
-              </div>
-            </div>
-
-            {/* Box 2: Peppol network */}
-            <div 
-              id="framework-box-2"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-2') ? 'animate' : ''}`}
-              style={{ animationDelay: '0.2s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  Usage of Peppol network to leverage for invoice exchange and interoperability
-                </p>
-              </div>
-            </div>
-
-            {/* Box 3: PINT as Data Dictionary */}
-            <div 
-              id="framework-box-3"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-3') ? 'animate' : ''}`}
-              style={{ animationDelay: '0.3s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                  </svg>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  Peppol International (PINT) as UAE Data Dictionary
-                </p>
-              </div>
-            </div>
-
-            {/* Box 4: B2B and B2G mandatory */}
-            <div 
-              id="framework-box-4"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-4') ? 'animate' : ''}`}
-              style={{ animationDelay: '0.4s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-                  </svg>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  B2B and B2G mandatory
-                </p>
-              </div>
-            </div>
-
-            {/* Box 5: UAE Peppol Authority Committee */}
-            <div 
-              id="framework-box-5"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 scroll-animate-scale ${visibleElements.has('framework-box-5') ? 'animate' : ''}`}
-              style={{ animationDelay: '0.5s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 group-hover:animate-bounce">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  Set up of the UAE Peppol Authority Committee
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       
 
@@ -1254,199 +1055,229 @@ export default function UAEEInvoicingLanding() {
       </section>
    
       {/* Services */}
-     
-
-     
-
-      {/* Partnership Section */}
-      <section id="partnership" className="py-16 px-6  bg-gray-50">
+      <section id="penalties" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div 
-            id="partnership-header"
+            id="penalties-header"
             ref={(el) => {
               if (el && observerRef.current) {
                 observerRef.current.observe(el);
               }
             }}
-            className={`md:w-full text-center mb-12 scroll-animate ${visibleElements.has('partnership-header') ? 'animate' : ''}`}
+            className={`text-center mb-12 scroll-animate ${visibleElements.has('penalties-header') ? 'animate' : ''}`}
           >
             <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-              TRUSTED PARTNERSHIP
+              COMPLIANCE & PENALTIES
             </p>
             <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-              Your Trusted Partner for
-              <span className="text-red-600"> UAE E-Invoicing </span>Compliance
+              UAE E-Invoicing
+              <span className="text-red-600"> Penalties </span>
             </h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div 
-              id="partnership-left"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`space-y-8 scroll-animate-left ${visibleElements.has('partnership-left') ? 'animate' : ''}`}
-            >
-              <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">More than a decade</h3>
-                <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                  Mac & Ross has been a leading certified audit and tax consulting firm in the UAE, providing trusted 
-                  guidance to businesses navigating complex regulatory landscapes.
-                </p>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  We are proud to partner with Taxilla, a global leader in e-invoicing solutions with a proven presence 
-                  in over 25 countries. This strategic alliance allows us to provide our clients with an end-to-end, 
-                  seamless compliance experience.
-                </p>
-              </div>
-
-              
-            </div>
-            <div className="bg-red-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Combined Offering</h3>
-                <div className="space-y-4">
-                  {[
-                    { title: "Expert Local Guidance:", desc: "Deep knowledge of UAE VAT and FTA procedures from Mac and Ross." },
-                    { title: "Proven Global Technology:", desc: "Taxilla's robust, battle-tested e-invoicing compliance platform." },
-                    { title: "End-to-End Support:", desc: "From initial system assessment and ASP integration to ongoing support and training." }
-                  ].map((item, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start space-x-3 hover:translate-x-2 transition-all duration-300 group"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1 group-hover:animate-bounce group-hover:text-green-500 transition-colors duration-300" />
-                      <div>
-                        <span className="font-semibold text-gray-900 group-hover:text-red-600 transition-colors duration-300">{item.title}</span>
-                        <span className="text-gray-700 ml-2 group-hover:text-gray-800 transition-colors duration-300">{item.desc}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-          
-          </div>
-          
-          <div 
-              id="partnership-right"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`text-center max-w-4xl mt-10 mx-auto flex flex-col justify-center items-center space-y-8 scroll-animate-right ${visibleElements.has('partnership-right') ? 'animate' : ''}`}
-            >
-              <div className="bg-gradient-to-br from-red-100 to-red-200 max-w-4xl p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Partnership Logos</h3>
-                <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 group">
-                    <div className="flex items-center justify-center space-x-6">
-                      <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
-                        <Image 
-                          src={mrLogo} 
-                          alt="Mac & Ross Logo" 
-                          width={120} 
-                          height={120}
-                          className="object-contain"
-                        />
-                      </div>
-                      <FaHandshake className="text-3xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300" />
-                      <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center group-hover:animate-bounce shadow-md">
-                        <Image 
-                          src={taxLogo} 
-                          alt="Taxilla Logo" 
-                          width={120} 
-                          height={120}
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
-                     <p className="text-gray-600 mt-4 font-semibold group-hover:text-red-600 transition-colors duration-300 flex items-center justify-center gap-2">Mac & Ross <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla</p>
-                  </div>
-                  
-                 
-                </div>
-              </div>
-
-             
-            </div>
-          {/* <div 
-            id="partnership-cta"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`mt-12 text-center scroll-animate ${visibleElements.has('partnership-cta') ? 'animate' : ''}`}
-          >
-            <p className="text-2xl font-bold text-gray-900 mb-4">
-              Partner with experts you can trust.
+            <p className="text-gray-600 mt-4 text-lg">
+              Key violations and administrative penalties as set out under Cabinet Decision No. 106 of 2025
             </p>
-            <p className="text-lg text-gray-700">
-              Ensure a smooth and successful transition to e-invoicing.
-            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-2xl shadow-xl overflow-hidden border border-red-100">
+            <div className="overflow-x-auto -mx-6 md:mx-0">
+              <table className="w-full min-w-[800px] md:min-w-0">
+                <thead>
+                  <tr className="bg-red-600 text-white">
+                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider w-16">No.</th>
+                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider">Description of Violation</th>
+                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider md:w-80">Administrative Penalty Amount (In AED)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr 
+                    className="bg-white hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">1</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Issuer to implement the Electronic Invoicing System, including failure to appoint an Accredited Service Provider within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 5,000 in case of delay for each month or part thereof.
+                    </td>
+                  </tr>
+                  <tr 
+                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">2</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Issuer to issue and transmit an Electronic Invoice to the Recipient through the Electronic Invoicing System within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 100 for each Electronic Invoice, up to a maximum of AED 5,000 per calendar month.
+                    </td>
+                  </tr>
+                  <tr 
+                    className="bg-white hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">3</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Issuer to issue and transmit an Electronic Credit Note to the Recipient through the Electronic Invoicing System within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 100 for each Electronic Credit Note, up to a maximum of AED 5,000 per calendar month.
+                    </td>
+                  </tr>
+                  <tr 
+                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">4</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Issuer to notify the Authority of a System Failure within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 1,000 for each day of delay or part thereof.
+                    </td>
+                  </tr>
+                  <tr 
+                    className="bg-white hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">5</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Recipient to notify the Authority of a System Failure within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 1,000 for each day of delay or part thereof.
+                    </td>
+                  </tr>
+                  <tr 
+                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
+                    ref={(el) => {
+                      if (el && observerRef.current) {
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">6</td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                      Failure by the Issuer or the Recipient to notify the appointed Accredited Service Provider of changes to the data registered with the Authority within the timeline prescribed by the Minister.
+                    </td>
+                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                      AED 1,000 for each day of delay or part thereof.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Warning Note */}
+          {/* <div className="mt-8 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-6">
+            <div className="flex items-start">
+              <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1 mr-3" />
+              <div>
+                <h4 className="text-lg font-semibold text-yellow-900 mb-2">Important Notice</h4>
+                <p className="text-yellow-800 leading-relaxed">
+                  These penalties are subject to Cabinet Decision No. 106 of 2025. It is crucial for businesses to ensure timely compliance with all e-invoicing requirements to avoid administrative penalties. We recommend consulting with qualified professionals to ensure full compliance.
+                </p>
+              </div>
+            </div>
           </div> */}
         </div>
       </section>
-      <section id="services" className="py-16 px-6 bg-gray-900">
-        <div className="container max-w-6xl mx-auto">
-          
+      <ClientLogoSection/>
+
+      <section id="faq" className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <div 
-            id="services-header"
+            id="faq-header"
             ref={(el) => {
               if (el && observerRef.current) {
                 observerRef.current.observe(el);
               }
             }}
-            className={`md:w-full text-center mb-6 scroll-animate ${visibleElements.has('services-header') ? 'animate' : ''}`}
+            className={`text-center mb-12 scroll-animate ${visibleElements.has('faq-header') ? 'animate' : ''}`}
           >
-  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-  Partnership Services
-  </p>
-  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-white">
-  Mac & Ross  <FaHandshake className="text-lg text-gray-900 group-hover:text-red-600 transition-colors duration-300" /> Taxilla 
-    <span className="text-red-600"> E-Invoicing </span>Solutions
-  </h2>
-</div>
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              UAE E-Invoicing
+              <span className="text-red-600"> FAQ </span>
+            </h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                id={`service-${index}`}
-                ref={(el) => {
-                  if (el && observerRef.current) {
-                    observerRef.current.observe(el);
-                  }
-                }}
-                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group border border-gray-100 scroll-animate-scale ${
-                  visibleElements.has(`service-${index}`) ? 'animate' : ''
-                } hover:scale-105 hover:ring-2 hover:ring-red-400`}
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-red-200 group-hover:to-red-300">
-                    <service.icon className="w-10 h-10 text-red-600 group-hover:animate-bounce" />
+          <div className="max-w-6xl mx-auto">
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <div 
+                  key={index}
+                  id={`faq-item-${index}`}
+                  ref={(el) => {
+                    if (el && observerRef.current) {
+                      observerRef.current.observe(el);
+                    }
+                  }}
+                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${
+                    visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
+                  } hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div 
+                    className="px-6 py-4 cursor-pointer transition-all duration-300 hover:bg-gray-200 group"
+                    onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <h4 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-red-600 transition-colors duration-300">{item.question}</h4>
+                      <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
+                        <ChevronRight 
+                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${
+                            activeFAQ === index ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-red-600 transition-colors duration-300">{service.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
+                  
+                  <div 
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                    </div>
+                  </div>
                 </div>
-                
-               
-                
-                {/* <div className="mt-6 pt-4 border-t border-gray-100">
-                  <button className="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div> */}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Partnership Section */}
+  
+      {/* Penalties Section */}
+    
       
       {/* Contact Section */}
    <section 
