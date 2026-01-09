@@ -68,23 +68,23 @@ export default function UAEEInvoicingLanding() {
     }
   ];
 
-   const eInvoicingTrends = [
-  "Contributing to the growth and competitiveness of the economy and utilizing big data",
-  "Reduce human intervention and making the UAE and its fiscal eco system digitally enabled",
-  "Increased transparency and improved audits / cultivating compliance",
-  "Enhanced taxpayer and user experience",
-  "Optimizing cost and core operations whilst reducing processing times encouraging less paper wastage and meeting sustainability objectives",
-  "Reduce the tax gap maximize compliance and tackle the shadow economy"
- ];
+  const eInvoicingTrends = [
+    "Contributing to the growth and competitiveness of the economy and utilizing big data",
+    "Reduce human intervention and making the UAE and its fiscal eco system digitally enabled",
+    "Increased transparency and improved audits / cultivating compliance",
+    "Enhanced taxpayer and user experience",
+    "Optimizing cost and core operations whilst reducing processing times encouraging less paper wastage and meeting sustainability objectives",
+    "Reduce the tax gap maximize compliance and tackle the shadow economy"
+  ];
 
-   const globalTrends = [
+  const globalTrends = [
     "Economic Contribution",
     "Digitization",
-    "Effectiveness", 
+    "Effectiveness",
     "Taxpayer* Experience",
     " Efficiency",
     "Compliance",
-   
+
   ];
   useEffect(() => {
     const handleScroll = () => {
@@ -262,7 +262,7 @@ export default function UAEEInvoicingLanding() {
       icon: Handshake,
       features: ["System Assessment", "ASP Integration", "Staff Training", "Ongoing Support"]
     }
-    
+
   ];
 
   const opportunities = [
@@ -322,9 +322,8 @@ export default function UAEEInvoicingLanding() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/50 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'
-      }`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'
+        }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
@@ -381,9 +380,9 @@ export default function UAEEInvoicingLanding() {
 
       {/* Hero Section */}
       <section
-  className="hero-section relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-  style={{ backgroundImage: `url('${banner1.src}')` }}
->
+        className="hero-section relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
+        style={{ backgroundImage: `url('${banner1.src}')` }}
+      >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container max-w-6xl mx-auto pt-30 relative z-10">
           <div className="flex flex-col lg:flex-row items-center relative z-10">
@@ -391,26 +390,26 @@ export default function UAEEInvoicingLanding() {
               <div className={`hero-content ${isLoaded ? 'loaded' : 'loading'}`}>
                 <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
                   <span className={`inline-block transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  Digital Tax Transformation: 
+                    Digital Tax Transformation:
                   </span>
                   <span className={`text-red-600 block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  Preparing for 
+                    Preparing for
                   </span>
-                
+
                   <span className={`text-white block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  UAE E-Invoicing
+                    UAE E-Invoicing
                   </span>
-                
+
                 </h1>
-                <p className={`text-xl text-white mb-8 leading-relaxed transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                {/* <p className={`text-xl text-white mb-8 leading-relaxed transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 We can show as timelines and mention that time is ticking for E-invoicing to urge businesses to initiate the assessment process.
-                   </p>
+                   </p> */}
                 <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <a href="#contact" className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center animate-glow hover:animate-none group">
                     <span className="group-hover:animate-bounce"> Start Your E-Invoicing Assessment</span>
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
-                  
+
                 </div>
               </div>
             </div>
@@ -435,52 +434,52 @@ export default function UAEEInvoicingLanding() {
         </div>
       </section>
       <section id="overview" className="relative w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
-              {/* Left Side - Image */}
-              <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
-                <div className="block w-full h-full">
-                  <Image
-                    src={aboutCredit1}
-                    alt="UAE E-Invoicing Partnership"
-                    fill
-                    className="object-cover rounded-lg"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-
-              {/* Right Side - White Overlay Box */}
-              <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
-                {/* Main Headline */}
-                <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
-                  Overview - UAE E-Invoicing
-                </h2>
-                
-                {/* Bullet Points */}
-                <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4">
-                  <li>
-                    The Federal Tax Authority (FTA) has outlined a strategic, phased roadmap for implementation, marking a major milestone in the UAE's digital tax transformation and alignment with global best practices.
-                  </li>
-                  <li>
-                    The UAE has adopted the 5-Corner Model and will utilize the Peppol network, a globally recognized platform used by multiple countries to enable secure and standardized e-invoicing.
-                  </li>
-                  <li>
-                    Ministerial Decisions No. 243 and 244 of 2025 detail the effective dates, phased rollout timelines, and operational requirements for e-invoicing adoption.
-                  </li>
-                </ul>
-                
-                {/* Concluding Paragraph */}
-                <p className="text-[#666666] leading-relaxed text-sm sm:text-base">
-                  To help you better understand the impact E-invoicing in the UAE, we've highlighted below why E-Invoicing matters to your business and the key factors and timelines for which you should prepare for.
-                </p>
-               
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+            {/* Left Side - Image */}
+            <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
+              <div className="block w-full h-full">
+                <Image
+                  src={aboutCredit1}
+                  alt="UAE E-Invoicing Partnership"
+                  fill
+                  className="object-cover rounded-lg"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </div>
 
-            {/* Statistics Section - Below the white box */}
-            {/* <div className="w-full flex justify-center mt-6 sm:mt-8 lg:mt-16 px-4">
+            {/* Right Side - White Overlay Box */}
+            <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
+              {/* Main Headline */}
+              <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
+                Overview - UAE E-Invoicing
+              </h2>
+
+              {/* Bullet Points */}
+              <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4">
+                <li>
+                  The Federal Tax Authority (FTA) has outlined a strategic, phased roadmap for implementation, marking a major milestone in the UAE's digital tax transformation and alignment with global best practices.
+                </li>
+                <li>
+                  The UAE has adopted the 5-Corner Model and will utilize the Peppol network, a globally recognized platform used by multiple countries to enable secure and standardized e-invoicing.
+                </li>
+                <li>
+                  Ministerial Decisions No. 243 and 244 of 2025 detail the effective dates, phased rollout timelines, and operational requirements for e-invoicing adoption.
+                </li>
+              </ul>
+
+              {/* Concluding Paragraph */}
+              <p className="text-[#666666] leading-relaxed text-sm sm:text-base">
+                To help you better understand the impact E-invoicing in the UAE, we've highlighted below why E-Invoicing matters to your business and the key factors and timelines for which you should prepare for.
+              </p>
+
+            </div>
+          </div>
+
+          {/* Statistics Section - Below the white box */}
+          {/* <div className="w-full flex justify-center mt-6 sm:mt-8 lg:mt-16 px-4">
               <div 
                 ref={statsRef}
                 className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl"
@@ -503,15 +502,15 @@ export default function UAEEInvoicingLanding() {
                 ))}
               </div>
             </div> */}
-          </div>
-        </section>
-     
+        </div>
+      </section>
+
 
 
       {/* E-Invoicing Definition Section */}
       <section id="definition" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div 
+          <div
             id="definition-header"
             ref={(el) => {
               if (el && observerRef.current) {
@@ -524,12 +523,12 @@ export default function UAEEInvoicingLanding() {
               
             </p> */}
             <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-            Introduction of <span className="text-red-600">UAE E-Invoicing</span>
+              Introduction of <span className="text-red-600">UAE E-Invoicing</span>
             </h2>
           </div>
 
           <div className="flex gap-12 items-start">
-            <div 
+            <div
               id="definition-left"
               ref={(el) => {
                 if (el && observerRef.current) {
@@ -537,8 +536,8 @@ export default function UAEEInvoicingLanding() {
                 }
               }}
               className={`flex-1 bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl scroll-animate-left ${visibleElements.has('definition-left') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
-              >
-              
+            >
+
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-Invoicing?</h3>
                 <p className="text-gray-700 leading-relaxed text-lg mb-4">
@@ -549,10 +548,10 @@ export default function UAEEInvoicingLanding() {
                 </p>
               </div>
 
-              
+
             </div>
 
-            <div 
+            <div
               id="definition-right"
               ref={(el) => {
                 if (el && observerRef.current) {
@@ -587,10 +586,10 @@ export default function UAEEInvoicingLanding() {
                 </ul>
               </div>
             </div>
-          
-            
+
+
           </div>
-       
+
         </div>
       </section>
       {/* <section className="relative w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
@@ -678,31 +677,31 @@ export default function UAEEInvoicingLanding() {
     </div>
   </div>
 </section> */}
-     
+
       <div id="model" className='py-16 flex flex-col justify-center items-center bg-red-50'>
-          <h2 className="text-4xl md:text-[47px] mb-12 font-bold leading-tight justify-center items-center text-gray-900">
-            UAE 
-            <span className="text-red-600"> E-INVOICING </span>
-            (5 corner model)
-            </h2>
-             <div className='flex justify-center items-center px-4'>
-              <Image 
-                src={bn} 
-                alt='E-Invoicing' 
-                width={1000} 
-                height={1000} 
-                className='w-full max-w-4xl h-auto object-contain'
-              />
-            </div>
-          </div>
-       {/* FAQ Section */}
-      
+        <h2 className="text-4xl md:text-[47px] mb-12 font-bold leading-tight justify-center items-center text-gray-900">
+          UAE
+          <span className="text-red-600"> E-INVOICING </span>
+          (5 corner model)
+        </h2>
+        <div className='flex justify-center items-center px-4'>
+          <Image
+            src={bn}
+            alt='E-Invoicing'
+            width={1000}
+            height={1000}
+            className='w-full max-w-4xl h-auto object-contain'
+          />
+        </div>
+      </div>
+      {/* FAQ Section */}
+
 
       {/* KSA Overview */}
       {/* <section id="about">
     <DeliveryMethodsSection/>
     </section> */}
-            {/* <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
+      {/* <section id="setup" className="py-16 px-6 bg-red-50 text-gray-900">
         <div className="container max-w-6xl mx-auto">
          <div 
            id="setup-header"
@@ -755,7 +754,7 @@ export default function UAEEInvoicingLanding() {
         </div>
       </section> */}
 
-     
+
       {/* <div 
         id="trends-desktop"
         ref={(el) => {
@@ -898,166 +897,80 @@ export default function UAEEInvoicingLanding() {
     </div>
   </div>
 </div> */}
-      
 
-      
+
+
 
       {/* Key Compliances */}
       <section id="compliance" className="py-16 px-6 bg-white text-gray-900">
         <div className="container mx-auto max-w-6xl">
-         
-            <div 
-              id="compliance-header"
-              ref={(el) => {
-                if (el && observerRef.current) {
-                  observerRef.current.observe(el);
-                }
-              }}
-              className={`md:w-full text-center mb-6 scroll-animate ${visibleElements.has('compliance-header') ? 'animate' : ''}`}
-            >
-  <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
-    IMPLEMENTATION TIMELINE
-  </p>
-  <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-    UAE E-Invoicing
-    <span className="text-red-600"> Timeline </span>
-  </h2>
-</div>
+
+          <div
+            id="compliance-header"
+            ref={(el) => {
+              if (el && observerRef.current) {
+                observerRef.current.observe(el);
+              }
+            }}
+            className={`md:w-full text-center mb-6 scroll-animate ${visibleElements.has('compliance-header') ? 'animate' : ''}`}
+          >
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-wider mb-4">
+              IMPLEMENTATION TIMELINE
+            </p>
+            <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
+              Critical
+              <span className="text-red-600"> Timelines </span>
+            </h2>
+          </div>
 
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              {complianceTimeline.map((item, index) => (
-                <div 
-                  key={index}
-                  className={`px-6 py-2 rounded-xl cursor-pointer transition-all duration-300 border-l-4 ${
-                    activeCompliance === index 
-                      ? `bg-${item.color}-50 border-${item.color}-500 shadow-md` 
-                      : 'bg-white hover:shadow-md border-gray-200 border hover:bg-gray-50'
-                  }`}
-                  onClick={() => setActiveCompliance(index)}
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h4>
-                      <div className="flex items-center space-x-4 text-sm mb-1">
-                        <span className={`px-3 py-1 rounded-full text-${item.color}-700 bg-${item.color}-100 font-medium`}>
-                          {item.effectiveDate}
-                        </span>
-                      </div>
-                      <span className="text-gray-600 text-sm">{item.revenueCriteria}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              
-              {/* Note Section */}
-              <div className="mt-6 bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="flex items-start">
-                  <span className="text-sm font-semibold text-blue-900 mr-2">Note:</span>
-                  <p className="text-sm text-blue-800">
-                    Revenue refers to gross income earned during the most recent accounting period
-                  </p>
-                </div>
-              </div>
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-red-100 text-gray-900 border-b border-red-200">
+                    <th className="p-4 font-bold">Implementation Phase</th>
+                    <th className="p-4 font-bold">Revenue Criteria (Turnover)</th>
+                    <th className="p-4 font-bold">ASP appointment date</th>
+                    <th className="p-4 font-bold">Effective Date</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {complianceTimeline.map((item, index) => (
+                    <tr
+                      key={index}
+                      className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-red-50 transition-colors duration-200`}
+                    >
+                      <td className="p-4 font-medium text-gray-900">{item.title}</td>
+                      <td className="p-4 text-gray-700">{item.revenueCriteria}</td>
+                      <td className="p-4 text-gray-700">{item.aspAppointmentDate}</td>
+                      <td className="p-4 text-gray-700">{item.effectiveDate}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+          </div>
 
-            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-red-600 uppercase tracking-wider">
-                    Step {activeCompliance + 1}
-                  </span>
-                  <div className="text-right">
-                    <div className="text-xs text-gray-600 uppercase tracking-wider">Implementation</div>
-                    <div className="text-sm font-semibold text-gray-800">Timeline</div>
-                  </div>
-                </div>
-                
-                <h3 className="text-3xl font-bold mb-2 text-gray-900">
-                  {complianceTimeline[activeCompliance].title}
-                </h3>
-                <div className="w-20 h-1 bg-red-500 rounded-full"></div>
-              </div>
-              
-              <div className="space-y-4">
-                {/* Effective Date Card */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-600 mb-1">Effective Date</div>
-                      <div className="text-lg font-bold text-gray-900">
-                        {complianceTimeline[activeCompliance].effectiveDate}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Revenue Criteria Card */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                      <BarChart3 className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-600 mb-1">Revenue Criteria (Turnover)</div>
-                      <div className="text-lg font-bold text-gray-900">
-                        {complianceTimeline[activeCompliance].revenueCriteria}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* ASP Appointment Date Card */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-600 mb-1">ASP Appointment Date</div>
-                      <div className="text-lg font-bold text-gray-900">
-                        {complianceTimeline[activeCompliance].aspAppointmentDate}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Description Card */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                        Implementation Details
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        {complianceTimeline[activeCompliance].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="mt-6 bg-red-50 rounded-lg p-4 border border-red-100">
+            <div className="flex items-start">
+              <span className="text-sm font-semibold text-red-900 mr-2">Note:</span>
+              <p className="text-sm text-red-800">
+                Revenue refers to gross income earned during the most recent accounting period
+              </p>
             </div>
           </div>
 
           {/* Transfer Pricing Section */}
-          
-          
+
+
         </div>
       </section>
-   
+
       {/* Services */}
       <section id="penalties" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div 
+          <div
             id="penalties-header"
             ref={(el) => {
               if (el && observerRef.current) {
@@ -1078,111 +991,75 @@ export default function UAEEInvoicingLanding() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-2xl shadow-xl overflow-hidden border border-red-100">
-            <div className="overflow-x-auto -mx-6 md:mx-0">
-              <table className="w-full min-w-[800px] md:min-w-0">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
-                  <tr className="bg-red-600 text-white">
-                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider w-16">No.</th>
-                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider">Description of Violation</th>
-                    <th className="px-4 md:px-6 py-4 text-left font-bold text-xs md:text-sm uppercase tracking-wider md:w-80">Administrative Penalty Amount (In AED)</th>
+                  <tr className="bg-gray-100 text-gray-900 border-b-2 border-red-500">
+                    <th className="px-6 py-4 font-bold text-sm uppercase tracking-wider w-16">Sr. No.</th>
+                    <th className="px-6 py-4 font-bold text-sm uppercase tracking-wider w-[30%]">Description of Violation</th>
+                    <th className="px-6 py-4 font-bold text-sm uppercase tracking-wider w-[25%]">Administrative Penalty Amount (In AED)</th>
+                    <th className="px-6 py-4 font-bold text-sm uppercase tracking-wider">Prescribed Timelines</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  <tr 
-                    className="bg-white hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">1</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                  <tr className="bg-white hover:bg-gray-50 transition-colors duration-200">
+                    <td className="px-6 py-4 text-center font-bold text-red-600">1</td>
+                    <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
                       Failure by the Issuer to implement the Electronic Invoicing System, including failure to appoint an Accredited Service Provider within the timeline prescribed by the Minister.
                     </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                    <td className="px-6 py-4 text-gray-900 font-semibold text-sm">
                       AED 5,000 in case of delay for each month or part thereof.
                     </td>
-                  </tr>
-                  <tr 
-                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">2</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
-                      Failure by the Issuer to issue and transmit an Electronic Invoice to the Recipient through the Electronic Invoicing System within the timeline prescribed by the Minister.
-                    </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
-                      AED 100 for each Electronic Invoice, up to a maximum of AED 5,000 per calendar month.
+                    <td className="px-6 py-4 text-gray-700 text-sm">
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Phase 1 - July 31, 2026/ January 1, 2027</li>
+                        <li>Phase 2 - March 31, 2027/July 1, 2027</li>
+                        <li>Govt entities - March 31, 2027/October 1, 2027</li>
+                      </ul>
                     </td>
                   </tr>
-                  <tr 
-                    className="bg-white hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">3</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
-                      Failure by the Issuer to issue and transmit an Electronic Credit Note to the Recipient through the Electronic Invoicing System within the timeline prescribed by the Minister.
+                  <tr className="bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                    <td className="px-6 py-4 text-center font-bold text-red-600">2</td>
+                    <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
+                      Failure by the Issuer to issue and transmit an Electronic Invoice/ Electronic Credit Note to the Recipient through the Electronic Invoicing System within the timeline prescribed by the Minister.
                     </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
-                      AED 100 for each Electronic Credit Note, up to a maximum of AED 5,000 per calendar month.
+                    <td className="px-6 py-4 text-gray-900 font-semibold text-sm">
+                      AED 100 for each Electronic Invoice/ Electronic Credit Note, up to a maximum of AED 5,000 per calendar month.
+                    </td>
+                    <td className="px-6 py-4 text-gray-700 text-sm">
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Within 14 days from the date of supply rules specified under UAE VAT regulations.</li>
+                        <li>Within 14 days from the date of the business transaction for non-registered companies</li>
+                      </ul>
                     </td>
                   </tr>
-                  <tr 
-                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">4</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
-                      Failure by the Issuer to notify the Authority of a System Failure within the timeline prescribed by the Minister.
+                  <tr className="bg-white hover:bg-gray-50 transition-colors duration-200">
+                    <td className="px-6 py-4 text-center font-bold text-red-600">3</td>
+                    <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
+                      Failure by the Issuer or recipient to notify the Authority of a System Failure within the timeline prescribed by the Minister.
                     </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                    <td className="px-6 py-4 text-gray-900 font-semibold text-sm">
                       AED 1,000 for each day of delay or part thereof.
                     </td>
-                  </tr>
-                  <tr 
-                    className="bg-white hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">5</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
-                      Failure by the Recipient to notify the Authority of a System Failure within the timeline prescribed by the Minister.
-                    </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
-                      AED 1,000 for each day of delay or part thereof.
+                    <td className="px-6 py-4 text-gray-700 text-sm">
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Within 2 business working days from date of occurrence of system failure.</li>
+                      </ul>
                     </td>
                   </tr>
-                  <tr 
-                    className="bg-gray-50 hover:bg-red-50 transition-colors duration-200"
-                    ref={(el) => {
-                      if (el && observerRef.current) {
-                        observerRef.current.observe(el);
-                      }
-                    }}
-                  >
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-center font-bold text-red-600 text-base md:text-lg">6</td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-700 leading-relaxed text-sm md:text-base">
+                  <tr className="bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                    <td className="px-6 py-4 text-center font-bold text-red-600">4</td>
+                    <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
                       Failure by the Issuer or the Recipient to notify the appointed Accredited Service Provider of changes to the data registered with the Authority within the timeline prescribed by the Minister.
                     </td>
-                    <td className="px-4 md:px-6 py-4 md:py-5 text-gray-900 font-semibold text-sm md:text-base">
+                    <td className="px-6 py-4 text-gray-900 font-semibold text-sm">
                       AED 1,000 for each day of delay or part thereof.
+                    </td>
+                    <td className="px-6 py-4 text-gray-700 text-sm">
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Within 5 business days from receiving confirmation of the amendment by Authority</li>
+                      </ul>
                     </td>
                   </tr>
                 </tbody>
@@ -1204,11 +1081,11 @@ export default function UAEEInvoicingLanding() {
           </div> */}
         </div>
       </section>
-      <ClientLogoSection/>
+      <ClientLogoSection />
 
       <section id="faq" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div 
+          <div
             id="faq-header"
             ref={(el) => {
               if (el && observerRef.current) {
@@ -1229,7 +1106,7 @@ export default function UAEEInvoicingLanding() {
           <div className="max-w-6xl mx-auto">
             <div className="space-y-4">
               {faqItems.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   id={`faq-item-${index}`}
                   ref={(el) => {
@@ -1237,31 +1114,28 @@ export default function UAEEInvoicingLanding() {
                       observerRef.current.observe(el);
                     }
                   }}
-                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${
-                    visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
-                  } hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                  className={`bg-gray-100 rounded-lg overflow-hidden scroll-animate-scale ${visibleElements.has(`faq-item-${index}`) ? 'animate' : ''
+                    } hover:shadow-lg transition-all duration-300 hover:scale-105`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div 
+                  <div
                     className="px-6 py-4 cursor-pointer transition-all duration-300 hover:bg-gray-200 group"
                     onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
                   >
                     <div className="flex justify-between items-center">
                       <h4 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-red-600 transition-colors duration-300">{item.question}</h4>
                       <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
-                        <ChevronRight 
-                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${
-                            activeFAQ === index ? 'rotate-90' : ''
-                          }`}
+                        <ChevronRight
+                          className={`w-4 h-4 text-gray-600 group-hover:text-white transition-all duration-300 ${activeFAQ === index ? 'rotate-90' : ''
+                            }`}
                         />
                       </div>
                     </div>
                   </div>
-                  
-                  <div 
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${activeFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <div className="px-6 pb-4">
                       <p className="text-gray-700 leading-relaxed">{item.answer}</p>
@@ -1275,22 +1149,22 @@ export default function UAEEInvoicingLanding() {
       </section>
 
       {/* Partnership Section */}
-  
+
       {/* Penalties Section */}
-    
-      
+
+
       {/* Contact Section */}
-   <section 
-     id="contact"
-     ref={(el) => {
-       if (el && observerRef.current) {
-         observerRef.current.observe(el);
-       }
-     }}
-     className={`relative py-16 px-6 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen scroll-animate ${visibleElements.has('contact') ? 'animate' : ''}`}
-     style={{ backgroundImage: "url('/1.png')" }}
-   >
-      <style jsx global>{`
+      <section
+        id="contact"
+        ref={(el) => {
+          if (el && observerRef.current) {
+            observerRef.current.observe(el);
+          }
+        }}
+        className={`relative py-16 px-6 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen scroll-animate ${visibleElements.has('contact') ? 'animate' : ''}`}
+        style={{ backgroundImage: "url('/1.png')" }}
+      >
+        <style jsx global>{`
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
@@ -1311,176 +1185,176 @@ export default function UAEEInvoicingLanding() {
           50% { transform: translateY(-8px); }
         }
       `}</style>
-      <div className="container mx-auto max-w-6xl text-white z-10">
-        {/* Header */}
-         <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div 
-          id="contact-header"
-          ref={(el) => {
-            if (el && observerRef.current) {
-              observerRef.current.observe(el);
-            }
-          }}
-          className={`text-center mb-12 scroll-animate ${visibleElements.has('contact-header') ? 'animate' : ''}`}
-        >
-          <h2 className="text-4xl font-bold mb-6">Ready for UAE E-Invoicing Compliance?</h2>
-          <p className="text-xl text-white/90">Partner with experts you can trust. Ensure a smooth and successful transition to e-invoicing.</p>
-        </div>
-
-        {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-      
-          <div 
-            id="contact-info"
+        <div className="container mx-auto max-w-6xl text-white z-10">
+          {/* Header */}
+          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div
+            id="contact-header"
             ref={(el) => {
               if (el && observerRef.current) {
                 observerRef.current.observe(el);
               }
             }}
-            className={`space-y-8 hover-lift-glow transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 scroll-animate-left ${visibleElements.has('contact-info') ? 'animate' : ''}`}
+            className={`text-center mb-12 scroll-animate ${visibleElements.has('contact-header') ? 'animate' : ''}`}
           >
-            <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
-                <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
-                <div>
-                  <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Phone</h4>
-                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
-                    <a href="tel:+97143584999" className="hover:text-yellow-300 transition-colors duration-300">+971 43584999</a>
-                  </p>
-                  <p className="opacity-90 group-hover:text-white transition-colors duration-300">
-                    <a href="tel:+971543522747" className="hover:text-yellow-300 transition-colors duration-300">+971 543522747</a>
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
-                <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
-                <div>
-                  <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Email</h4>
-                  <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
-                    <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 transition-colors duration-300">info@mnrdxb.com</a>
-                  </p>
-                  {/* <p className="opacity-90 group-hover:text-white transition-colors duration-300">einvoicing@macross.ae</p> */}
-                </div>
-              </div>
-              <a 
-                href="https://www.google.com/maps/search/Dubai,+United+Arab+Emirates" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300 cursor-pointer"
-              >
-                <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
-                <div>
-                  <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Location</h4>
-                  <p className="opacity-90 group-hover:text-white transition-colors duration-300 group-hover:underline">Dubai, United Arab Emirates</p>
-                </div>
-              </a>
-             
-            </div>
-          
-            <div className="pt-6">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50 group">
-                  <span className="group-hover:animate-bounce">Schedule E-Invoicing Consultation</span>
-                </button>
-                
-              </div>
-            </div>
+            <h2 className="text-4xl font-bold mb-6">Ready for UAE E-Invoicing Compliance?</h2>
+            <p className="text-xl text-white/90">Partner with experts you can trust. Ensure a smooth and successful transition to e-invoicing.</p>
           </div>
 
-        
-          <div 
-            id="contact-form"
-            ref={(el) => {
-              if (el && observerRef.current) {
-                observerRef.current.observe(el);
-              }
-            }}
-            className={`bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover-lift-glow transition-all duration-300 scroll-animate-right ${visibleElements.has('contact-form') ? 'animate' : ''}`}
-          >
-            <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-            <div className="space-y-6">
-              <div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
-                  placeholder="Your full name"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div className="flex space-x-2">
-                {/* Country Code Dropdown */}
-                <select
-                  id="countryCode"
-                  name="countryCode"
-                  value={formData.countryCode}
-                  onChange={e => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
-                  className="px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+          {/* Two-column layout */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+            <div
+              id="contact-info"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`space-y-8 hover-lift-glow transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 scroll-animate-left ${visibleElements.has('contact-info') ? 'animate' : ''}`}
+            >
+              <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
+                  <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Phone</h4>
+                    <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
+                      <a href="tel:+97143584999" className="hover:text-yellow-300 transition-colors duration-300">+971 43584999</a>
+                    </p>
+                    <p className="opacity-90 group-hover:text-white transition-colors duration-300">
+                      <a href="tel:+971543522747" className="hover:text-yellow-300 transition-colors duration-300">+971 543522747</a>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
+                  <Mail className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Email</h4>
+                    <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
+                      <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 transition-colors duration-300">info@mnrdxb.com</a>
+                    </p>
+                    {/* <p className="opacity-90 group-hover:text-white transition-colors duration-300">einvoicing@macross.ae</p> */}
+                  </div>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/Dubai,+United+Arab+Emirates"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300 cursor-pointer"
                 >
-                  <option value="+971">+971</option>
-                  <option value="+91">+91</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                  <option value="+61">+61</option>
-                  {/* Add more if needed */}
-                </select>
+                  <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Location</h4>
+                    <p className="opacity-90 group-hover:text-white transition-colors duration-300 group-hover:underline">Dubai, United Arab Emirates</p>
+                  </div>
+                </a>
 
-                {/* Phone Number Input */}
-                <input
-                  type="tel"
-                  id="number"
-                  name="number"
-                  value={formData.number}
-                  onChange={e => {
-                    const value = e.target.value.replace(/[^\d]/g, '').slice(0, 10);
-                    setFormData(prev => ({ ...prev, number: value }));
-                  }}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
-                  placeholder="Enter your phone number"
-                  inputMode="numeric"
-                  pattern="\\d{10}"
-                  maxLength={10}
-                  minLength={10}
-                />
               </div>
 
-              <div>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={2}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent resize-none transition-all duration-200 focus:shadow-lg hover:bg-black/30"
-                  placeholder="Tell us about your business expansion plans..."
-                />
+              <div className="pt-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50 group">
+                    <span className="group-hover:animate-bounce">Schedule E-Invoicing Consultation</span>
+                  </button>
+
+                </div>
               </div>
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 shadow-md focus:ring-2 focus:ring-white/50 group"
-              >
-                <Send className="w-5 h-5 group-hover:animate-bounce" />
-                <span className="group-hover:animate-bounce">Send Message</span>
-              </button>
+            </div>
+
+
+            <div
+              id="contact-form"
+              ref={(el) => {
+                if (el && observerRef.current) {
+                  observerRef.current.observe(el);
+                }
+              }}
+              className={`bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover-lift-glow transition-all duration-300 scroll-animate-right ${visibleElements.has('contact-form') ? 'animate' : ''}`}
+            >
+              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
+              <div className="space-y-6">
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div className="flex space-x-2">
+                  {/* Country Code Dropdown */}
+                  <select
+                    id="countryCode"
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={e => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
+                    className="px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+                  >
+                    <option value="+971">+971</option>
+                    <option value="+91">+91</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+61">+61</option>
+                    {/* Add more if needed */}
+                  </select>
+
+                  {/* Phone Number Input */}
+                  <input
+                    type="tel"
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={e => {
+                      const value = e.target.value.replace(/[^\d]/g, '').slice(0, 10);
+                      setFormData(prev => ({ ...prev, number: value }));
+                    }}
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+                    placeholder="Enter your phone number"
+                    inputMode="numeric"
+                    pattern="\\d{10}"
+                    maxLength={10}
+                    minLength={10}
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={2}
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent resize-none transition-all duration-200 focus:shadow-lg hover:bg-black/30"
+                    placeholder="Tell us about your business expansion plans..."
+                  />
+                </div>
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 shadow-md focus:ring-2 focus:ring-white/50 group"
+                >
+                  <Send className="w-5 h-5 group-hover:animate-bounce" />
+                  <span className="group-hover:animate-bounce">Send Message</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Footer */}
       <footer className="py-12 px-6 bg-gray-900 text-white">
@@ -1495,7 +1369,7 @@ export default function UAEEInvoicingLanding() {
               </div>
               <p className="text-gray-400">Leading the digital transformation in Middle East invoicing.</p>
             </div>
-            
+
             <ul className="font-semibold mb-8 leading-10">
               <li><a href="#overview" className="text-white hover:text-red-600 transition-colors">Overview</a></li>
               <li><a href="#definition" className="text-white hover:text-red-600 transition-colors">Introduction</a></li>
@@ -1505,7 +1379,7 @@ export default function UAEEInvoicingLanding() {
               <li><a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a></li>
               <li><a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a></li>
             </ul>
-            
+
             {/* <div>
               <h4 className="font-semibold mb-4">Countries</h4>
               <div className="space-y-2">
@@ -1514,7 +1388,7 @@ export default function UAEEInvoicingLanding() {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Egypt</a>
               </div>
             </div> */}
-            
+
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-gray-400">
@@ -1524,13 +1398,13 @@ export default function UAEEInvoicingLanding() {
                     <h4 className="text-lg font-semibold mb-2">Phone</h4>
                     <p className="opacity-90 mb-1">
                       <a href="tel:+97143584999" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                      +971-50 123 4567
+                        +971-50 123 4567
                       </a>
                     </p>
                     <p className="opacity-90">
                       <a href="tel:+971543522747" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                     
-+971-55 987 6543
+
+                        +971-55 987 6543
                       </a>
                     </p>
                   </div>
@@ -1540,28 +1414,28 @@ export default function UAEEInvoicingLanding() {
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Email</h4>
                     <p className="opacity-90 mb-1">
-                      <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                        info@mnrdxb.com
+                      <a href="mailto:einvoicing@macross.ae" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
+                        einvoicing@macross.ae
                       </a>
                     </p>
-                   
+
                   </div>
                 </div>
-                
+
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Address</h4>
               <div className="space-y-2 text-gray-400">
-                
+
                 <div className="flex items-start space-x-4 group">
                   <MapPin className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300" />
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Location</h4>
                     <p className="opacity-90">
-                      <a 
-                        href="https://maps.google.com/maps?q=Dubai,+United+Arab+Emirates" 
-                        target="_blank" 
+                      <a
+                        href="https://maps.google.com/maps?q=Dubai,+United+Arab+Emirates"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-yellow-300 cursor-pointer transition-colors duration-200"
                       >
@@ -1573,10 +1447,10 @@ export default function UAEEInvoicingLanding() {
               </div>
             </div>
           </div>
-          
-            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 eInvoice ME. All rights reserved | Crafted with care by <a href="https://digitalizetheglobe.com/" target="_blank" rel="noopener noreferrer" className='text-red-600 font-bold cursor-pointer hover:text-red-500 transition-colors duration-300'>Digitalize The Globe</a>.</p>
-            </div>
+
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 eInvoice ME. All rights reserved | Crafted with care by <a href="https://digitalizetheglobe.com/" target="_blank" rel="noopener noreferrer" className='text-red-600 font-bold cursor-pointer hover:text-red-500 transition-colors duration-300'>Digitalize The Globe</a>.</p>
+          </div>
         </div>
       </footer>
     </div>
