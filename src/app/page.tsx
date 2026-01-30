@@ -1213,7 +1213,10 @@ export default function UAEEInvoicingLanding() {
               }}
               className={`space-y-8 hover-lift-glow transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 scroll-animate-left ${visibleElements.has('contact-info') ? 'animate' : ''}`}
             >
-              <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
+              <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+              <p className="text-white/80 mb-8 leading-relaxed">
+                Have questions about UAE E-Invoicing? Our dedicated team is ready to provide the guidance and support you need for a seamless transition. Reach out to us directly through any of the channels below.
+              </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 group hover:translate-x-2 transition-all duration-300">
                   <Phone className="w-8 h-8 mt-1 flex-shrink-0 icon-bounce transition-transform duration-200 group-hover:text-yellow-300 group-hover:animate-bounce" />
@@ -1232,7 +1235,7 @@ export default function UAEEInvoicingLanding() {
                   <div>
                     <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">Email</h4>
                     <p className="opacity-90 mb-1 group-hover:text-white transition-colors duration-300">
-                      <a href="mailto:info@mnrdxb.com" className="hover:text-yellow-300 transition-colors duration-300">info@mnrdxb.com</a>
+                      <a href="mailto:einvoicing@mnrdxb.com" className="hover:text-yellow-300 transition-colors duration-300">einvoicing@mnrdxb.com</a>
                     </p>
                     {/* <p className="opacity-90 group-hover:text-white transition-colors duration-300">einvoicing@macross.ae</p> */}
                   </div>
@@ -1340,7 +1343,7 @@ export default function UAEEInvoicingLanding() {
                     onChange={handleInputChange}
                     rows={2}
                     className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/70 focus:border-transparent resize-none transition-all duration-200 focus:shadow-lg hover:bg-black/30"
-                    placeholder="Tell us about your business expansion plans..."
+                    placeholder="How can we help you?"
                   />
                 </div>
                 <button
@@ -1398,13 +1401,12 @@ export default function UAEEInvoicingLanding() {
                     <h4 className="text-lg font-semibold mb-2">Phone</h4>
                     <p className="opacity-90 mb-1">
                       <a href="tel:+97143584999" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                        +971-50 123 4567
+                        +971 4358 4999
                       </a>
                     </p>
                     <p className="opacity-90">
                       <a href="tel:+971543522747" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-
-                        +971-55 987 6543
+                        +971 54 352 2747
                       </a>
                     </p>
                   </div>
@@ -1414,8 +1416,8 @@ export default function UAEEInvoicingLanding() {
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Email</h4>
                     <p className="opacity-90 mb-1">
-                      <a href="mailto:einvoicing@macross.ae" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
-                        einvoicing@macross.ae
+                      <a href="mailto:einvoicing@mnrdxb.com" className="hover:text-yellow-300 cursor-pointer transition-colors duration-200">
+                        einvoicing@mnrdxb.com
                       </a>
                     </p>
 
