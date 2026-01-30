@@ -245,20 +245,20 @@ export default function UAEEInvoicingLanding() {
 
   const services = [
     {
-      title: "Expert Local Guidance",
-      description: "Deep knowledge of UAE VAT and FTA procedures from Mac and Ross.",
+      title: "Specialized UAE Tax Expertise",
+      description: "Leveraging deep knowledge of FTA regulations and local tax laws to ensure your business stays fully compliant.",
       icon: UserCheck,
       // features: ["UAE Tax Expertise", "FTA Compliance", "Local Regulatory Knowledge", "Business Advisory"]
     },
     {
       title: "Proven Global Technology",
-      description: "Taxilla's robust, battle-tested e-invoicing compliance platform.",
+      description: "Utilize Taxilla's battlefield-tested platform, trusted across 25+ countries for robust e-invoicing compliance and seamless API integration.",
       icon: Globe,
       features: ["25+ Countries Experience", "Cutting-edge Software", "API Integration", "Real-time Processing"]
     },
     {
-      title: "End-to-End Support",
-      description: "From initial system assessment and ASP integration to ongoing support and training.",
+      title: "End-to-End Implementation Support",
+      description: "We handle everything: from initial gap assessment and system integration to staff training and post-go-live support.",
       icon: Handshake,
       features: ["System Assessment", "ASP Integration", "Staff Training", "Ongoing Support"]
     }
@@ -397,13 +397,13 @@ export default function UAEEInvoicingLanding() {
                   </span>
 
                   <span className={`text-white block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    UAE E-Invoicing
+                    Master UAE E-Invoicing Compliance
                   </span>
 
                 </h1>
-                {/* <p className={`text-xl text-white mb-8 leading-relaxed transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                We can show as timelines and mention that time is ticking for E-invoicing to urge businesses to initiate the assessment process.
-                   </p> */}
+                <p className="text-xl text-white mb-8 leading-relaxed transition-all duration-1000 delay-800 text-justify sm:text-left">
+                  The Federal Tax Authority's mandate is changing how you do business. We provide the expert guidance, technology, and support you need to transition seamlessly.
+                </p>
                 <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <a href="#contact" className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center animate-glow hover:animate-none group">
                     <span className="group-hover:animate-bounce"> Start Your E-Invoicing Assessment</span>
@@ -454,25 +454,25 @@ export default function UAEEInvoicingLanding() {
             <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
               {/* Main Headline */}
               <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
-                Overview - UAE E-Invoicing
+                Why E-Invoicing Matters for Your Business
               </h2>
 
               {/* Bullet Points */}
-              <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4">
+              <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4 text-justify">
                 <li>
-                  The Federal Tax Authority (FTA) has outlined a strategic, phased roadmap for implementation, marking a major milestone in the UAE's digital tax transformation and alignment with global best practices.
+                  <strong className="text-black font-semibold">Strategic Transformation:</strong> The FTA's phased roadmap marks a critical shift towards a fully digital tax ecosystem, aligning the UAE with global economic standards.
                 </li>
                 <li>
-                  The UAE has adopted the 5-Corner Model and will utilize the Peppol network, a globally recognized platform used by multiple countries to enable secure and standardized e-invoicing.
+                  <strong className="text-black font-semibold">Secure & Standardized:</strong> Adopting the 5-Corner Model and Peppol network ensures that your financial data is exchanged securely, efficiently, and in a standardized format.
                 </li>
                 <li>
-                  Ministerial Decisions No. 243 and 244 of 2025 detail the effective dates, phased rollout timelines, and operational requirements for e-invoicing adoption.
+                  <strong className="text-black font-semibold">Regulatory Clarity:</strong> Ministerial Decisions No. 243 and 244 of 2025 provide the definitive timeline and operational framework. Now is the time to prepare.
                 </li>
               </ul>
 
               {/* Concluding Paragraph */}
-              <p className="text-[#666666] leading-relaxed text-sm sm:text-base">
-                To help you better understand the impact E-invoicing in the UAE, we've highlighted below why E-Invoicing matters to your business and the key factors and timelines for which you should prepare for.
+              <p className="text-[#666666] leading-relaxed text-sm sm:text-base text-justify">
+                To navigate these changes, understanding the 'Why' is just as important as the 'How'. Below, we break down the key factors, definitions, and timelines that every UAE business needs to know to stay compliant and competitive.
               </p>
 
             </div>
@@ -523,7 +523,7 @@ export default function UAEEInvoicingLanding() {
               
             </p> */}
             <h2 className="text-4xl md:text-[47px] font-bold leading-tight text-gray-900">
-              Introduction of <span className="text-red-600">UAE E-Invoicing</span>
+              Understanding <span className="text-red-600">UAE E-Invoicing</span>
             </h2>
           </div>
 
@@ -540,11 +540,11 @@ export default function UAEEInvoicingLanding() {
 
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-Invoicing?</h3>
-                <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                  E-Invoicing is the digital exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format.
+                <p className="text-gray-700 leading-relaxed text-lg mb-4 text-justify">
+                  E-Invoicing is the automated, secure exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format.
                 </p>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  E-invoicing involves the electronic generation, transmission, and receipt of invoices, replacing traditional paper-based methods.
+                <p className="text-gray-700 leading-relaxed text-lg text-justify">
+                  It replaces traditional paper and PDF invoices with a seamless digital workflow (XML) that integrates directly with the tax authority's systems.
                 </p>
               </div>
 
@@ -986,7 +986,7 @@ export default function UAEEInvoicingLanding() {
               UAE E-Invoicing
               <span className="text-red-600"> Penalties </span>
             </h2>
-            <p className="text-gray-600 mt-4 text-lg">
+            <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
               Key violations and administrative penalties as set out under Cabinet Decision No. 106 of 2025
             </p>
           </div>
@@ -1138,7 +1138,7 @@ export default function UAEEInvoicingLanding() {
                       }`}
                   >
                     <div className="px-6 pb-4">
-                      <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                      <p className="text-gray-700 leading-relaxed text-justify">{item.answer}</p>
                     </div>
                   </div>
                 </div>
@@ -1214,7 +1214,7 @@ export default function UAEEInvoicingLanding() {
               className={`space-y-8 hover-lift-glow transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 scroll-animate-left ${visibleElements.has('contact-info') ? 'animate' : ''}`}
             >
               <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
-              <p className="text-white/80 mb-8 leading-relaxed">
+              <p className="text-white/80 mb-8 leading-relaxed text-justify">
                 Have questions about UAE E-Invoicing? Our dedicated team is ready to provide the guidance and support you need for a seamless transition. Reach out to us directly through any of the channels below.
               </p>
               <div className="space-y-6">
