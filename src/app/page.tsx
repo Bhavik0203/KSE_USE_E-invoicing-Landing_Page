@@ -326,12 +326,12 @@ export default function UAEEInvoicingLanding() {
         }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">M&R</span>
+            <div className="w-10 h-10 p-2  bg-red-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg  ">M&R</span>
             </div>
             <div>
               <span className="text-xl font-bold text-red-600 block leading-none">Mac & Ross</span>
-              <span className="text-xs text-white">Management Consultancy</span>
+              <span className="text-xs text-white">Chartered Accountants L.L.C</span>
             </div>
           </div>
           {/* Desktop Menu */}
@@ -390,14 +390,14 @@ export default function UAEEInvoicingLanding() {
               <div className={`hero-content ${isLoaded ? 'loaded' : 'loading'}`}>
                 <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
                   <span className={`inline-block transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    Digital Tax Transformation:
+                    Countdown to Mandatory  
                   </span>
                   <span className={`text-red-600 block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    Preparing for
+                    E-Invoicing
                   </span>
 
                   <span className={`text-white block transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    Master UAE E-Invoicing Compliance
+                    Readiness for Your Business
                   </span>
 
                 </h1>
@@ -454,26 +454,17 @@ export default function UAEEInvoicingLanding() {
             <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
               {/* Main Headline */}
               <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
-                Why E-Invoicing Matters for Your Business
+                Transform Your Compliance Journey with UAE E-Invoicing
               </h2>
 
-              {/* Bullet Points */}
-              <ul className="text-[#666666] leading-relaxed text-sm sm:text-base mb-6 sm:mb-7 space-y-3 sm:space-y-4 text-justify">
-                <li>
-                  <strong className="text-black font-semibold">Strategic Transformation:</strong> The FTA's phased roadmap marks a critical shift towards a fully digital tax ecosystem, aligning the UAE with global economic standards.
-                </li>
-                <li>
-                  <strong className="text-black font-semibold">Secure & Standardized:</strong> Adopting the 5-Corner Model and Peppol network ensures that your financial data is exchanged securely, efficiently, and in a standardized format.
-                </li>
-                <li>
-                  <strong className="text-black font-semibold">Regulatory Clarity:</strong> Ministerial Decisions No. 243 and 244 of 2025 provide the definitive timeline and operational framework. Now is the time to prepare.
-                </li>
-              </ul>
+             
 
               {/* Concluding Paragraph */}
               <p className="text-[#666666] leading-relaxed text-sm sm:text-base text-justify">
-                To navigate these changes, understanding the 'Why' is just as important as the 'How'. Below, we break down the key factors, definitions, and timelines that every UAE business needs to know to stay compliant and competitive.
-              </p>
+              The UAE is stepping into a new era of digital tax transformation, and the Electronic Invoicing is at the key of this change. Effective January 2027, businesses across the UAE must transition to a fully integrated, real-time invoicing framework that enhances transparency, accuracy, and regulatory control.
+With over a decade of experience, Mac & Ross is a trusted audit and tax advisory firm, guiding businesses across the UAE through complex regulatory requirements. In partnership with Taxilla, a global leader in e-invoicing solutions operating in 25+ countries, we provide a complete end-to-end solution for E-Invoicing compliance.
+Whether you are a small business, a mid-sized company, or a large enterprise with complex ERP systems, we simplify the compliance journey-letting you focus on your operations while we manage regulatory obligations.
+ </p>
 
             </div>
           </div>
@@ -688,9 +679,9 @@ export default function UAEEInvoicingLanding() {
           <Image
             src={bn}
             alt='E-Invoicing'
-            width={1000}
-            height={1000}
-            className='w-full max-w-4xl h-auto object-contain'
+            width={1200}
+            height={1200}
+            className='w-full max-w-6xl h-auto object-contain'
           />
         </div>
       </div>
@@ -1058,7 +1049,7 @@ export default function UAEEInvoicingLanding() {
                     </td>
                     <td className="px-6 py-4 text-gray-700 text-sm">
                       <ul className="list-disc pl-4 space-y-1">
-                        <li>Within 5 business days from receiving confirmation of the amendment by Authority</li>
+                        <li>Within 5 business days from receiving confirmation of the amendment.</li>
                       </ul>
                     </td>
                   </tr>
@@ -1154,6 +1145,88 @@ export default function UAEEInvoicingLanding() {
 
 
       {/* Contact Section */}
+  <section id="overview" className="relative w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+            {/* Left Side - Image */}
+               <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
+              {/* Main Headline */}
+              <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl lg:text-[48px] mb-4 sm:mb-5 leading-tight">
+                How Mac & Ross Will Support You
+              </h2>
+
+              <p className="text-[#666666] leading-relaxed text-sm sm:text-base mb-4">
+                We're here to simplify the transition and ensure your business is prepared:
+              </p>
+
+              <ul className="text-[#666666] leading-relaxed text-sm sm:text-base list-disc pl-5 mb-6 space-y-2">
+                <li>Roadmap for implementation & impact analysis</li>
+                <li>System assessment, readiness checks, and gap analysis</li>
+                <li>Integration with Approved Solution Providers (ASPs)</li>
+                <li>Ongoing compliance monitoring and updates</li>
+                <li>Staff trainings</li>
+              </ul>
+
+              {/* Concluding Paragraph */}
+              <p className="text-[#666666] leading-relaxed text-sm sm:text-base text-justify">
+                We strongly encourage you to begin preparations early to ensure a smooth transition and full compliance with FTA deadlines without disruption. We would be delighted to connect with you personally, understand your specific needs, and guide you step by step through the E-Invoicing process. Our team is committed to supporting you throughout, making the transition seamless, efficient, and tailored to your business. Partner with experts who deliver solutions tailored to your business needs.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-200 shadow-md">
+                  Schedule a Call
+                </button>
+                <button className="bg-white text-red-600 border-2 border-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 hover:scale-105 transition-all duration-200 shadow-md">
+                  Download E-Invoicing Overview
+                </button>
+              </div>
+
+            </div>
+            <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
+              <div className="block w-full h-full">
+                <Image
+                  src={aboutCredit1}
+                  alt="UAE E-Invoicing Partnership"
+                  fill
+                  className="object-cover rounded-lg"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+            {/* Right Side - White Overlay Box */}
+         
+          </div>
+
+          {/* Statistics Section - Below the white box */}
+          {/* <div className="w-full flex justify-center mt-6 sm:mt-8 lg:mt-16 px-4">
+              <div 
+                ref={statsRef}
+                className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl"
+              >
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center px-2 sm:px-0">
+                    <div className="text-[#1A1A1A] font-bold text-2xl sm:text-4xl lg:text-6xl mb-1 sm:mb-2">
+                      {shouldAnimate ? (
+                        stat.value >= 1000 ? (
+                          <span>{stat.value.toLocaleString()} +</span>
+                        ) : (
+                          <span>{stat.value} +</span>
+                        )
+                      ) : (
+                        "0 +"
+                      )}
+                    </div>
+                    <div className="text-[#666666] text-xs sm:text-sm lg:text-base leading-tight sm:leading-normal">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+        </div>
+      </section>
+
       <section
         id="contact"
         ref={(el) => {
