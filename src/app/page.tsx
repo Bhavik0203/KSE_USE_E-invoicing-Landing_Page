@@ -25,6 +25,7 @@ export default function UAEEInvoicingLanding() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const statsRef = useRef<HTMLDivElement | null>(null);
   const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const stats = [
     { value: 25, label: "Countries Experience" },
@@ -95,7 +96,7 @@ export default function UAEEInvoicingLanding() {
   }, []);
 
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (mobileMenuOpen || isModalOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -103,7 +104,7 @@ export default function UAEEInvoicingLanding() {
     return () => {
       document.body.classList.remove('overflow-hidden');
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, isModalOpen]);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -292,15 +293,17 @@ export default function UAEEInvoicingLanding() {
     email: '',
     countryCode: '+971', // default value
     number: '',
-    message: ''
+    message: '',
+    consent: false
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
     if (name === 'number') return; // handled inline below
+    const checked = (e.target as HTMLInputElement).checked;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
   };
 
@@ -313,6 +316,10 @@ export default function UAEEInvoicingLanding() {
     }
     if (!phoneRegex.test(formData.number)) {
       alert('Phone number must be exactly 10 digits and contain only numbers.');
+      return;
+    }
+    if (!formData.consent) {
+      alert('Please agree to the consent terms.');
       return;
     }
     const fullPhoneNumber = formData.countryCode + formData.number;
@@ -1174,12 +1181,19 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-200 shadow-md">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="cursor-pointer bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-200 shadow-md"
+                >
                   Schedule a Call
                 </button>
-                <button className="bg-white text-red-600 border-2 border-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 hover:scale-105 transition-all duration-200 shadow-md">
+                <a
+                  href="/UAE E-Invoicing Landscape_MNR.pdf"
+                  download
+                  className="cursor-pointer bg-white text-red-600 border-2 border-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 hover:scale-105 transition-all duration-200 shadow-md inline-block text-center"
+                >
                   Download E-Invoicing Overview
-                </button>
+                </a>
               </div>
 
             </div>
@@ -1330,7 +1344,10 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
 
               <div className="pt-6">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50 group">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-md focus:ring-2 focus:ring-white/50 group"
+                  >
                     <span className="group-hover:animate-bounce">Schedule E-Invoicing Consultation</span>
                   </button>
 
@@ -1419,6 +1436,22 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
                     placeholder="How can we help you?"
                   />
                 </div>
+
+                {/* Consent Checkbox */}
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formData.consent}
+                    onChange={handleInputChange}
+                    className="mt-1 w-5 h-5 rounded border-white/30 bg-black/20 text-red-600 focus:ring-2 focus:ring-white/70 cursor-pointer"
+                  />
+                  <label htmlFor="consent" className="text-sm text-white/90 leading-relaxed cursor-pointer">
+                    I consent to Mac & Ross contacting me regarding E-Invoicing services and agree to the processing of my personal data in accordance with the privacy policy.
+                  </label>
+                </div>
+
                 <button
                   onClick={handleSubmit}
                   className="w-full bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 shadow-md focus:ring-2 focus:ring-white/50 group"
@@ -1528,6 +1561,143 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
           </div>
         </div>
       </footer>
+
+      {/* Schedule a Call Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          />
+
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-fade-in-up">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
+              aria-label="Close modal"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Modal Header */}
+            <div className="bg-red-600 px-6 py-4 rounded-t-2xl">
+              <h3 className="text-2xl font-bold text-white">Schedule a Call</h3>
+              <p className="text-white/80 text-sm mt-1">Fill in your details and we'll get back to you shortly.</p>
+            </div>
+
+            {/* Modal Form */}
+            <div className="p-6 space-y-4">
+              <div>
+                <label htmlFor="modal-name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input
+                  type="text"
+                  id="modal-name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  id="modal-email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="modal-phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <div className="flex space-x-2">
+                  <select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={e => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
+                    className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+                  >
+                    <option value="+971">+971</option>
+                    <option value="+91">+91</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+61">+61</option>
+                  </select>
+                  <input
+                    type="tel"
+                    id="modal-phone"
+                    name="number"
+                    value={formData.number}
+                    onChange={e => {
+                      const value = e.target.value.replace(/[^\d]/g, '').slice(0, 10);
+                      setFormData(prev => ({ ...prev, number: value }));
+                    }}
+                    className="flex-1 px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your phone number"
+                    inputMode="numeric"
+                    pattern="\d{10}"
+                    maxLength={10}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="modal-message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea
+                  id="modal-message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none transition-all duration-200"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              {/* Consent Checkbox */}
+              <div className="flex items-start space-x-3">
+                <input
+                  type="checkbox"
+                  id="modal-consent"
+                  name="consent"
+                  checked={formData.consent}
+                  onChange={handleInputChange}
+                  className="mt-1 w-5 h-5 rounded border-gray-300 bg-gray-50 text-red-600 focus:ring-2 focus:ring-red-500 cursor-pointer"
+                />
+                <label htmlFor="modal-consent" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
+                  I consent to Mac & Ross contacting me regarding E-Invoicing services and agree to the processing of my personal data in accordance with the privacy policy.
+                </label>
+              </div>
+
+              <button
+                onClick={() => {
+                  handleSubmit();
+                  if (formData.name && formData.email && formData.number && formData.message && formData.consent) {
+                    const phoneRegex = /^\d{10}$/;
+                    if (phoneRegex.test(formData.number)) {
+                      setIsModalOpen(false);
+                    }
+                  }
+                }}
+                className="w-full bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 shadow-md focus:ring-2 focus:ring-red-500/50 group"
+              >
+                <Send className="w-5 h-5 group-hover:animate-bounce" />
+                <span className="group-hover:animate-bounce">Submit Request</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
