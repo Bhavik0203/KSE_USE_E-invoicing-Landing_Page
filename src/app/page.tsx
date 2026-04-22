@@ -387,7 +387,7 @@ export default function UAEEInvoicingLanding() {
       <section
         className="hero-section relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
         style={{ 
-          backgroundImage: `linear-gradient(135deg, #1a1a1a 0%, #800404 80%, #0a0a0a 100%)`,
+          backgroundImage: `linear-gradient(135deg, #1a1a1a 0%, #680404 80%, #0a0a0a 100%)`,
           backgroundColor: '#681313'
         }}
       >
