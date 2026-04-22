@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ChevronRight, FileText, Shield, ShieldCheck, Globe, TrendingUp, CheckCircle, ArrowRight, Calendar, Building, Users, MapPin, Award, Briefcase, Clock, Phone, Mail, ExternalLink, Send, Scale, Calculator, FileCheck, UserCheck, BarChart3, Handshake, Search, AlertTriangle } from 'lucide-react';
 import { FaHandshake } from 'react-icons/fa';
 import DeliveryMethodsSection from './components/about';
-import banner1 from '../../public/banner1.jpg';
+import banner1 from '../../public/banner0.png';
 import aboutCredit1 from '../../public/1.png';
 import bn from '../../public/model.jpg';
 import banner2 from '../../public/1.png';
@@ -333,13 +333,11 @@ export default function UAEEInvoicingLanding() {
         }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 p-2  bg-red-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg  ">M&R</span>
-            </div>
-            <div>
+           
+         <div>
               <span className="text-xl font-bold text-red-600 block leading-none">Mac & Ross</span>
               <span className="text-xs text-white">Chartered Accountants L.L.C</span>
-            </div>
+           </div>
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
@@ -388,12 +386,14 @@ export default function UAEEInvoicingLanding() {
       {/* Hero Section */}
       <section
         className="hero-section relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
-        style={{ backgroundImage: `url('${banner1.src}')` }}
+        style={{ 
+          backgroundImage: `linear-gradient(135deg, #1a1a1a 0%, #800404 80%, #0a0a0a 100%)`,
+          backgroundColor: '#681313'
+        }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="container max-w-6xl mx-auto pt-30 relative z-10">
+                <div className="container max-w-6xl mx-auto pt-30 relative z-10">
           <div className="flex flex-col lg:flex-row items-center relative z-10">
-            <div className="lg:w-2/3 mb-12 lg:mb-0">
+            <div className=" mb-12 lg:mb-0">
               <div className={`hero-content ${isLoaded ? 'loaded' : 'loading'}`}>
                 <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
                   <span className={`inline-block transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -682,13 +682,13 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
           <span className="text-red-600"> E-INVOICING </span>
           (5 corner model)
         </h2>
-        <div className='flex justify-center items-center px-4'>
+        <div className='w-full'>
           <Image
             src={bn}
             alt='E-Invoicing'
             width={1200}
             height={1200}
-            className='w-full max-w-6xl h-auto object-contain'
+            className='w-full h-auto object-contain'
           />
         </div>
       </div>
@@ -1249,7 +1249,7 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
           }
         }}
         className={`relative py-16 px-6 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen scroll-animate ${visibleElements.has('contact') ? 'animate' : ''}`}
-        style={{ backgroundImage: "url('/1.png')" }}
+        style={{ backgroundImage: "url('/capital2.jpg')" }}
       >
         <style jsx global>{`
         @keyframes fadeInUp {
