@@ -307,7 +307,7 @@ export default function UAEEInvoicingLanding() {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Phone number validation: only digits and exactly 10 digits
     const phoneRegex = /^\d{10}$/;
     if (!formData.name || !formData.email || !formData.number || !formData.message) {
@@ -322,9 +322,36 @@ export default function UAEEInvoicingLanding() {
       alert('Please agree to the consent terms.');
       return;
     }
-    const fullPhoneNumber = formData.countryCode + formData.number;
-    console.log('Form submitted:', { ...formData, fullPhoneNumber });
-    // You can add validation and API calls here
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Thank you! Your message has been sent successfully.');
+        setFormData({
+          name: '',
+          email: '',
+          countryCode: '+971',
+          number: '',
+          message: '',
+          consent: false
+        });
+        setIsModalOpen(false);
+      } else {
+        alert(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('An error occurred while sending the message. Please try again later.');
+    }
   };
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -525,7 +552,7 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
             </h2>
           </div>
 
-          <div className="flex gap-12 items-start">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div
               id="definition-left"
               ref={(el) => {
@@ -533,15 +560,15 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
                   observerRef.current.observe(el);
                 }
               }}
-              className={`flex-1 bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl scroll-animate-left ${visibleElements.has('definition-left') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
+              className={`flex-1 bg-gradient-to-br from-green-100 to-green-200 p-6 md:p-8 rounded-2xl scroll-animate-left ${visibleElements.has('definition-left') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
             >
 
-              <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What is E-Invoicing?</h3>
-                <p className="text-gray-700 leading-relaxed text-lg mb-4 text-justify">
+              <div className="bg-green-50 border-l-4 border-green-500 p-5 md:p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">What is E-Invoicing?</h3>
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-4 text-justify">
                   E-Invoicing is the automated, secure exchange of invoice documents between suppliers and buyers in a structured, integrated electronic format.
                 </p>
-                <p className="text-gray-700 leading-relaxed text-lg text-justify">
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg text-justify">
                   It replaces traditional paper and PDF invoices with a seamless digital workflow (XML) that integrates directly with the tax authority's systems.
                 </p>
               </div>
@@ -556,21 +583,21 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
                   observerRef.current.observe(el);
                 }
               }}
-              className={`flex-1 bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl scroll-animate-right ${visibleElements.has('definition-right') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
+              className={`flex-1 w-full bg-gradient-to-br from-red-100 to-red-200 p-6 md:p-8 rounded-2xl scroll-animate-right ${visibleElements.has('definition-right') ? 'animate' : ''} hover:shadow-xl transition-all duration-300`}
             >
 
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What E-Invoices Are NOT:</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 md:p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">What E-Invoices Are NOT:</h3>
+                <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
                   E- Invoices are not simply digital versions of paper invoices which can be :
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-base md:text-lg">
                   <li className="flex items-center space-x-2 hover:translate-x-2 transition-transform duration-300">
-                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse flex-shrink-0"></span>
                     <span className="text-gray-700">PDFs or Word documents</span>
                   </li>
                   <li className="flex items-center space-x-2 hover:translate-x-2 transition-transform duration-300">
-                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse flex-shrink-0"></span>
                     <span className="text-gray-700">Image files i.e.; JPG or TIFF</span>
                   </li>
                   <li className="flex items-center space-x-2 hover:translate-x-2 transition-transform duration-300">
@@ -1680,15 +1707,7 @@ Whether you are a small business, a mid-sized company, or a large enterprise wit
               </div>
 
               <button
-                onClick={() => {
-                  handleSubmit();
-                  if (formData.name && formData.email && formData.number && formData.message && formData.consent) {
-                    const phoneRegex = /^\d{10}$/;
-                    if (phoneRegex.test(formData.number)) {
-                      setIsModalOpen(false);
-                    }
-                  }
-                }}
+                onClick={handleSubmit}
                 className="w-full bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 shadow-md focus:ring-2 focus:ring-red-500/50 group"
               >
                 <Send className="w-5 h-5 group-hover:animate-bounce" />
