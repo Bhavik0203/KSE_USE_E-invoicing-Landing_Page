@@ -5,14 +5,14 @@ import wp from "../../../public/wha.png"; // ✅ Adjusted import path for WhatsA
 import snd from "../../../public/send.png";
 const WhatsAppPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [phoneNumber] = useState(" 966553637617"); // ✅ Default WhatsApp number
+  const [phoneNumber] = useState("+971 4 358 4999"); // ✅ Default WhatsApp number
   const [message, setMessage] = useState("");
 
   const handleSendMessage = () => {
     if (!message.trim() || !phoneNumber.trim()) return;
 
     // Remove spaces and ensure proper number format
-    const formattedPhoneNumber = phoneNumber.replace(/\s+/g, "");
+    const formattedPhoneNumber = phoneNumber.replace(/[\s+]/g, "");
     const url = `https://wa.me/${formattedPhoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(url, "_blank");
