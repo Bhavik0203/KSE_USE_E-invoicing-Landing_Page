@@ -38,7 +38,36 @@ Message: ${message}
       `,
     };
 
+    const senderMailOptions = {
+      from: process.env.SMTP_USER || '"Contact Form" <noreply@example.com>',
+      to: email, // Sender's email address
+      subject: `Thank you for contacting us, ${name}`,
+      text: `
+Hi ${name},
+
+Thank you for reaching out to us. We have received your message and will get back to you shortly.
+
+Here is a copy of your message:
+Message: ${message}
+
+Best regards,
+MNR DXB Team
+      `,
+      html: `
+        <h3>Thank you for reaching out!</h3>
+        <p>Hi ${name},</p>
+        <p>We have received your message and will get back to you shortly.</p>
+        <br/>
+        <p><strong>Your Message:</strong></p>
+        <p>${message}</p>
+        <br/>
+        <p>Best regards,</p>
+        <p>MNR DXB Team</p>
+      `,
+    };
+
     await transporter.sendMail(mailOptions);
+    await transporter.sendMail(senderMailOptions);
 
     return NextResponse.json({ success: true, message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
