@@ -367,7 +367,7 @@ export default function UAEEInvoicingLanding() {
            </div>
           </div>
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <a href="#overview" className="text-white hover:text-red-600 transition-colors">Overview</a>
             <a href="#definition" className="text-white hover:text-red-600 transition-colors">Introduction</a>
             {/* <a href="#framework" className="text-white hover:text-red-600 transition-colors">Framework</a> */}
@@ -375,17 +375,25 @@ export default function UAEEInvoicingLanding() {
             <a href="#services" className="text-white hover:text-red-600 transition-colors">Services</a>
             <a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a>
             <a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a>
+            <div className="flex items-center justify-center">
+              <Image src="/asp_e-invoicing.png" alt="ASP E-invoicing" width={200} height={80} className="w-40 xl:w-48 h-auto object-contain" />
+            </div>
           </div>
           {/* Hamburger for Mobile */}
-          <button
-            className="md:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-red-600"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Open menu"
-          >
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center space-x-4">
+            <div className="flex items-center justify-center">
+              <Image src="/asp_e-invoicing.png" alt="ASP E-invoicing" width={150} height={60} className="w-28 h-auto object-contain" />
+            </div>
+            <button
+              className="flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-red-600"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Open menu"
+            >
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
